@@ -1,0 +1,35 @@
+{
+  "name": "ele",
+  "version": "1.0.0",
+  "description": "仿饿了么",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"node ./build/server-dev.js",
+    "build":"node ./build/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/codedaybyday/ele.git"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "liubeijing",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codedaybyday/ele/issues"
+  },
+  "homepage": "https://github.com/codedaybyday/ele#readme",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "css-loader": "^0.26.1",
+    "vue": "^2.1.10",
+    "vue-loader": "^11.1.0",
+    "vue-template-compiler": "^2.1.10",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^1.16.3"
+  }
+}
