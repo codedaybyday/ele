@@ -4,12 +4,14 @@ module.exports = {
 	entry:{
 		app:[
 		'./src/index.js',
+		'webpack/hot/only-dev-server',
 		'webpack-dev-server/client?http://localhost:8080/'
 		]
 	},
 	output:{
-		path:__dirname,
-		filename:'../dist/bundle.js'
+		//publicPath: "http://127.0.0.1:8080/dist/",
+    	//path: __dirname+'/static/dist/',
+    	filename: "bundle.js"
 	},
 	module:{
 		rules:[
@@ -24,12 +26,23 @@ module.exports = {
 				use:[
 					{loader:'babel-loader'}
 				]
+			},{
+				test:/\.css$/,
+				use:[
+					{loader:'css-loader'}
+				]
 			}
 		]
 	},
 	devServer:{
-		contentBase:__dirname,
+		/*contentBase:__dirname,
 		port:8080,
-		hot:true
-	}
+		hot:true*/
+	},
+	plugins:[
+		new webpack.DefinePlugin({
+		    'process.env.NODE_ENV': '"development"'
+		}),
+		new webpack.HotModuleReplacementPlugin()
+	]
 };

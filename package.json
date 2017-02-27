@@ -2,11 +2,11 @@
   "name": "ele",
   "version": "1.0.0",
   "description": "仿饿了么",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"node ./build/server-dev.js",
-    "build":"node ./build/server.js"
+    "dev": "node ./build/server-dev.js",
+    "build": "node ./build/server.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
     "css-loader": "^0.26.1",
+    "jquery": "^3.1.1",
     "vue": "^2.1.10",
     "vue-loader": "^11.1.0",
     "vue-template-compiler": "^2.1.10",
