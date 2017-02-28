@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import App from './app.vue';
 import $ from 'jquery';
+import store from './store';
 
 const originWidth = 375;
 $(function(){
@@ -13,5 +14,6 @@ $(function(){
 });
 new Vue({
 	el:'#app',
+	store,
 	render:(h) => h(App)
 });
