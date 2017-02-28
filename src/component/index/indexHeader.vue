@@ -150,6 +150,8 @@ export default{
     methods:mapActions(['get_city_info']),//{...mapActions(['get_city_info'])}这样写报错了？？？
     created:function(){
         this.get_city_info();
+        //console.log(this.$store.state);
+        this.city_info = this.$store.state.city_info;
     }
 };
 </script>
