@@ -5,7 +5,7 @@
                 <svg class="address-icon">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#location"></use>
                 </svg>
-                <span class="header-address-content">黄浦区人民大道</span>
+                <span class="header-address-content">{{position.name}}</span>
                 <svg class="address-select-icon">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow"></use>
                 </svg>
@@ -144,14 +144,25 @@ import {mapActions} from 'vuex';
 export default{
 	data:function(){
         return {
-            city_info:{}
+            city_info:{},
+            position:{
+                name:'地址获取中...'
+            },
         };
     },
-    methods:mapActions(['get_city_info']),//{...mapActions(['get_city_info'])}这样写报错了？？？
+    methods:mapActions(['getCityInfo','getPos']),//{...mapActions(['get_city_info'])}这样写报错了？？？
     created:function(){
-        this.get_city_info();
+        //this.getCityInfo();
         //console.log(this.$store.state);
-        this.city_info = this.$store.state.city_info;
+        //this.position = this.$store.state.position;
+        //console.log(this.$store.state.position);
+        //this.city_info = this.$store.state.city_info;
+        /*this.getPos().then((res) => {
+            console.log('getPos',res);
+        });*/
+        this.getPos().then((msg) => {
+            console.log(msg);
+        });
     }
 };
 </script>

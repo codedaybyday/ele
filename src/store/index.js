@@ -4,7 +4,8 @@ import actions from './actions.js';
 import getters from './getters.js';
 import mutations from './mutations.js';
 const state = {
-	city_info:{}
+	city_info:{},
+	position:{}
 };
 Vue.use(Vuex);
 export default new Vuex.Store({
