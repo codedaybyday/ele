@@ -2,72 +2,11 @@
 	<div>
         <div class="food-entry">
             <div class="food-entry-list-wrap">
-                <div class="food-entry-list">
-                    <a class="food-entry-item">
-                        <img src="http://fuss10.elemecdn.com/b/7e/d1890cf73ae6f2adb97caa39de7fcjpeg.jpeg?imageMogr/format/webp/"/>
-                        <span class="food-name">土豪推荐</span>
-                    </a>
-                    <a class="food-entry-item">
-                        <img src="http://fuss10.elemecdn.com/b/7e/d1890cf73ae6f2adb97caa39de7fcjpeg.jpeg?imageMogr/format/webp/"/>
-                        <span class="food-name">土豪推荐</span>
-                    </a>
-                    <a class="food-entry-item">
-                        <img src="http://fuss10.elemecdn.com/b/7e/d1890cf73ae6f2adb97caa39de7fcjpeg.jpeg?imageMogr/format/webp/"/>
-                        <span class="food-name">土豪推荐</span>
-                    </a>
-                    <a class="food-entry-item">
-                        <img src="http://fuss10.elemecdn.com/b/7e/d1890cf73ae6f2adb97caa39de7fcjpeg.jpeg?imageMogr/format/webp/"/>
-                        <span class="food-name">土豪推荐</span>
-                    </a>
-                    <a class="food-entry-item">
-                        <img src="http://fuss10.elemecdn.com/b/7e/d1890cf73ae6f2adb97caa39de7fcjpeg.jpeg?imageMogr/format/webp/"/>
-                        <span class="food-name">土豪推荐</span>
-                    </a>
-                    <a class="food-entry-item">
-                        <img src="http://fuss10.elemecdn.com/b/7e/d1890cf73ae6f2adb97caa39de7fcjpeg.jpeg?imageMogr/format/webp/"/>
-                        <span class="food-name">土豪推荐</span>
-                    </a>
-                    <a class="food-entry-item">
-                        <img src="http://fuss10.elemecdn.com/b/7e/d1890cf73ae6f2adb97caa39de7fcjpeg.jpeg?imageMogr/format/webp/"/>
-                        <span class="food-name">土豪推荐</span>
-                    </a>
-                    <a class="food-entry-item">
-                        <img src="http://fuss10.elemecdn.com/b/7e/d1890cf73ae6f2adb97caa39de7fcjpeg.jpeg?imageMogr/format/webp/"/>
-                        <span class="food-name">土豪推荐</span>
-                    </a>
-                </div>
-                <div class="food-entry-list">
-                    <a class="food-entry-item">
-                        <img src="http://fuss10.elemecdn.com/b/7e/d1890cf73ae6f2adb97caa39de7fcjpeg.jpeg?imageMogr/format/webp/"/>
-                        <span class="food-name">土豪推荐</span>
-                    </a>
-                    <a class="food-entry-item">
-                        <img src="http://fuss10.elemecdn.com/b/7e/d1890cf73ae6f2adb97caa39de7fcjpeg.jpeg?imageMogr/format/webp/"/>
-                        <span class="food-name">土豪推荐</span>
-                    </a>
-                    <a class="food-entry-item">
-                        <img src="http://fuss10.elemecdn.com/b/7e/d1890cf73ae6f2adb97caa39de7fcjpeg.jpeg?imageMogr/format/webp/"/>
-                        <span class="food-name">土豪推荐</span>
-                    </a>
-                    <a class="food-entry-item">
-                        <img src="http://fuss10.elemecdn.com/b/7e/d1890cf73ae6f2adb97caa39de7fcjpeg.jpeg?imageMogr/format/webp/"/>
-                        <span class="food-name">土豪推荐</span>
-                    </a>
-                    <a class="food-entry-item">
-                        <img src="http://fuss10.elemecdn.com/b/7e/d1890cf73ae6f2adb97caa39de7fcjpeg.jpeg?imageMogr/format/webp/"/>
-                        <span class="food-name">土豪推荐</span>
-                    </a>
-                    <a class="food-entry-item">
-                        <img src="http://fuss10.elemecdn.com/b/7e/d1890cf73ae6f2adb97caa39de7fcjpeg.jpeg?imageMogr/format/webp/"/>
-                        <span class="food-name">土豪推荐</span>
-                    </a>
-                    <a class="food-entry-item">
-                        <img src="http://fuss10.elemecdn.com/b/7e/d1890cf73ae6f2adb97caa39de7fcjpeg.jpeg?imageMogr/format/webp/"/>
-                        <span class="food-name">土豪推荐</span>
-                    </a>
-                    <a class="food-entry-item">
-                        <img src="http://fuss10.elemecdn.com/b/7e/d1890cf73ae6f2adb97caa39de7fcjpeg.jpeg?imageMogr/format/webp/"/>
-                        <span class="food-name">土豪推荐</span>
+
+                <div class="food-entry-list" v-for="item in food_entry_groups">
+                    <a class="food-entry-item" v-for="item2 in item">
+                        <img :src="'//fuss10.elemecdn.com/'+item2.image_url"/>
+                        <span class="food-name">{{item2.title}}</span>
                     </a>
                 </div>
             </div>
@@ -123,7 +62,27 @@
 }
 </style>
 <script>
+import {getFoodEntry} from '../../service/getData.js';
 export default{
-	
+	data:function(){
+        return {
+            food_entry:[]
+        };
+    },
+    computed:{
+        food_entry_groups:function(){
+            let arr = [],
+                len = parseInt(this.food_entry.length/8),
+                group_len = 8;
+            for(let i=0;i<len;i++){
+                arr[i] = this.food_entry.slice(i*group_len,group_len);
+            }
+            console.log(arr);
+            return arr;
+        }
+    },
+    mounted:function(){
+        getFoodEntry().then(msg => this.food_entry = msg);
+    }
 };
 </script>

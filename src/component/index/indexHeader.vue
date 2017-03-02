@@ -12,24 +12,15 @@
             </div>
             <div class="header-weather">
                 <div>
-                    <h2 class="temp">13°</h2>
-                    <p class="weather-type">晴天</p>
+                    <h2 class="temp">{{weather_info.temperature}}°</h2>
+                    <p class="weather-type">{{weather_info.description}}</p>
                 </div>
-                <img class="weather-icon" alt="" src="/static/img/weather_icon.png">
+                <img class="weather-icon" alt="" :src="'/static/img/weather_icon.png?'+weather_info.image_hash">
             </div>
         </div>
         <form action=""><input type="text" placeholder="搜索商家、商品" class="search-bar"></form>
         <div class="hot-goods-list">
-            <a href="/search/#/shop?keyword=%E7%9A%87%E8%8C%B6&amp;geohash=wtw3sjq6n6um">皇茶</a>
-            <a href="/search/#/shop?keyword=%E8%B6%85%E7%BA%A7%E9%B8%A1%E8%BD%A6&amp;geohash=wtw3sjq6n6um">超级鸡车</a>
-            <a href="/search/#/shop?keyword=%E4%BD%8E%E8%B0%83%E9%AB%98%E6%89%8B&amp;geohash=wtw3sjq6n6um">低调高手</a>
-            <a href="/search/#/shop?keyword=%E7%B1%B3%E6%9C%89%E6%B2%99%E6%8B%89&amp;geohash=wtw3sjq6n6um">米有沙拉</a>
-            <a href="/search/#/shop?keyword=%E8%82%AF%E5%BE%B7%E5%9F%BA&amp;geohash=wtw3sjq6n6um">肯德基</a>
-            <a href="/search/#/shop?keyword=%E9%87%8D%E5%BA%86%E5%B0%8F%E9%9D%A2&amp;geohash=wtw3sjq6n6um">重庆小面</a><a
-                href="/search/#/shop?keyword=%E8%84%86%E7%9A%AE%E9%B8%A1&amp;geohash=wtw3sjq6n6um">脆皮鸡</a>
-            <a href="/search/#/shop?keyword=%E7%BA%A2%E5%94%87%E4%B8%B2%E4%B8%B2%E9%A6%99&amp;geohash=wtw3sjq6n6um">红唇串串香</a>
-            <a href="/search/#/shop?keyword=%E5%AF%BF%E5%8F%B8&amp;geohash=wtw3sjq6n6um">寿司</a>
-            <a href="/search/#/shop?keyword=%E6%A1%82%E6%9E%97%E7%B1%B3%E7%B2%89&amp;geohash=wtw3sjq6n6um">桂林米粉</a>
+            <a v-for="item in hot_search_words" :href="'/search/#/shop?keyword='+item.search_word+'geohash=wtw3sjq6n6um'">{{item.word}}</a>
         </div>
     </header>
 </template>
@@ -140,7 +131,9 @@ header{
 }
 </style>
 <script>
-import {mapActions} from 'vuex';
+import {mapActions, mapState} from 'vuex';
+import {fetch} from '../../utils/fetch.js';
+import {getPos,getWeatherInfo,getHotSearchWords,getFoodEntry} from '../../service/getData.js';
 export default{
 	data:function(){
         return {
@@ -148,21 +141,27 @@ export default{
             position:{
                 name:'地址获取中...'
             },
+            weather_info:{},
+            hot_search_words:[],
+            food_entry:[]
         };
     },
+    computed:mapState(['latitude','longitude']),
     methods:mapActions(['getCityInfo','getPos']),//{...mapActions(['get_city_info'])}这样写报错了？？？
-    created:function(){
-        //this.getCityInfo();
-        //console.log(this.$store.state);
-        //this.position = this.$store.state.position;
-        //console.log(this.$store.state.position);
-        //this.city_info = this.$store.state.city_info;
-        /*this.getPos().then((res) => {
-            console.log('getPos',res);
+    mounted:function(){
+        /*getPos().then((msg) => {
+            this.position = msg;
+            console.log(this.city_info);
         });*/
-        this.getPos().then((msg) => {
-            console.log(msg);
-        });
+        this.getCityInfo()
+        .then(getWeatherInfo)
+        .then(msg => this.weather_info = msg)
+        .then(getPos)
+        .then(msg => this.position = msg)
+        .then(getHotSearchWords)
+        .then(msg => this.hot_search_words = msg);
+        
+        getFoodEntry().then(msg => this.food_entry = msg);
     }
 };
 </script>

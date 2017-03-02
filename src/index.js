@@ -8,7 +8,7 @@ $(function(){
 	$(window).resize(setFontSize);
 	setFontSize();
 	function setFontSize(){
-		console.log('aaa',$(window).width(),window.screen.width);
+		//console.log('aaa',$(window).width(),window.screen.width);
 		$('html').css('fontSize',75*window.screen.width/originWidth);
 	}
 });

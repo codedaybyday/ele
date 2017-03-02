@@ -1,309 +1,51 @@
 <template>
 	<div>
-		<h3 class="recommand-merchant-title">推荐商家</h3>
-        <ul class="merchant-list">
-        	<li class="merchant-item">
-        		<div class="merchant-logo"><img src="https://fuss10.elemecdn.com/9/0c/948c1f6578c4bb879e7ebf718de63jpeg.jpeg?imageMogr/format/webp/" alt=""/></div>
-        		<div class="merchant-item-main">
-        			<div class="merchant-line">
-        				<h3 class="merchant-name">必胜宅急送（人民路店）</h3>
-        				<div class="support-wrap">
-        					<div class="activity-wrap">
-        						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">保</i>
-        					</div>
-        					<div class="activity-wrap">
-        						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">票</i>
-        					</div>
-        					<div class="activity-wrap">
-        						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">准</i>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="merchant-line">
-        				<div class="rate-wrap">
-        					<div class="rating-wrap">
-        						<div class="rating-max">
-        							<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
-        						</div>
-        						<div class="rating-rating" style="width:96%;">
-        							<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
-        						</div>
-        					</div>
-        					<span class="merchant-rate">4.8</span>
-        					<span>月售120000件</span>
-        				</div>
-        			</div>
-        			<div class="merchant-line">
-        				<div class="money-limit">
-        					<span>¥0起送</span>
-        					<span>配送费¥9</span>
-        				</div>
-        				<div class="time-distance-wrap">
-        					<span class="distance-wrap">1.09km</span>
-        					<span class="time-wrap">40分钟</span>
-        				</div>
-        			</div>
-        		</div>
-        	</li>
-        	<li class="merchant-item">
-        		<div class="merchant-logo"><img src="https://fuss10.elemecdn.com/9/0c/948c1f6578c4bb879e7ebf718de63jpeg.jpeg?imageMogr/format/webp/" alt=""/></div>
-        		<div class="merchant-item-main">
-        			<div class="merchant-line">
-        				<h3 class="merchant-name">必胜宅急送（人民路店）</h3>
-        				<div class="support-wrap">
-        					<div class="activity-wrap">
-        						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">保</i>
-        					</div>
-        					<div class="activity-wrap">
-        						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">票</i>
-        					</div>
-        					<div class="activity-wrap">
-        						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">准</i>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="merchant-line">
-        				<div class="rate-wrap">
-        					<div class="rating-wrap">
-        						<div class="rating-max">
-        							<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
-        						</div>
-        						<div class="rating-rating" style="width:96%;">
-        							<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
-        						</div>
-        					</div>
-        					<span class="merchant-rate">4.8</span>
-        					<span>月售120000件</span>
-        				</div>
-        			</div>
-        			<div class="merchant-line">
-        				<div class="money-limit">
-        					<span>¥0起送</span>
-        					<span>配送费¥9</span>
-        				</div>
-        				<div class="time-distance-wrap">
-        					<span class="distance-wrap">1.09km</span>
-        					<span class="time-wrap">40分钟</span>
-        				</div>
-        			</div>
-        		</div>
-        	</li>
-        	<li class="merchant-item">
-        		<div class="merchant-logo"><img src="https://fuss10.elemecdn.com/9/0c/948c1f6578c4bb879e7ebf718de63jpeg.jpeg?imageMogr/format/webp/" alt=""/></div>
-        		<div class="merchant-item-main">
-        			<div class="merchant-line">
-        				<h3 class="merchant-name">必胜宅急送（人民路店）</h3>
-        				<div class="support-wrap">
-        					<div class="activity-wrap">
-        						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">保</i>
-        					</div>
-        					<div class="activity-wrap">
-        						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">票</i>
-        					</div>
-        					<div class="activity-wrap">
-        						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">准</i>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="merchant-line">
-        				<div class="rate-wrap">
-        					<div class="rating-wrap">
-        						<div class="rating-max">
-        							<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
-        						</div>
-        						<div class="rating-rating" style="width:96%;">
-        							<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
-        						</div>
-        					</div>
-        					<span class="merchant-rate">4.8</span>
-        					<span>月售120000件</span>
-        				</div>
-        			</div>
-        			<div class="merchant-line">
-        				<div class="money-limit">
-        					<span>¥0起送</span>
-        					<span>配送费¥9</span>
-        				</div>
-        				<div class="time-distance-wrap">
-        					<span class="distance-wrap">1.09km</span>
-        					<span class="time-wrap">40分钟</span>
-        				</div>
-        			</div>
-        		</div>
-        	</li>
-        	<li class="merchant-item">
-        		<div class="merchant-logo"><img src="https://fuss10.elemecdn.com/9/0c/948c1f6578c4bb879e7ebf718de63jpeg.jpeg?imageMogr/format/webp/" alt=""/></div>
-        		<div class="merchant-item-main">
-        			<div class="merchant-line">
-        				<h3 class="merchant-name">必胜宅急送（人民路店）</h3>
-        				<div class="support-wrap">
-        					<div class="activity-wrap">
-        						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">保</i>
-        					</div>
-        					<div class="activity-wrap">
-        						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">票</i>
-        					</div>
-        					<div class="activity-wrap">
-        						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">准</i>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="merchant-line">
-        				<div class="rate-wrap">
-        					<div class="rating-wrap">
-        						<div class="rating-max">
-        							<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
-        						</div>
-        						<div class="rating-rating" style="width:96%;">
-        							<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
-        						</div>
-        					</div>
-        					<span class="merchant-rate">4.8</span>
-        					<span>月售120000件</span>
-        				</div>
-        			</div>
-        			<div class="merchant-line">
-        				<div class="money-limit">
-        					<span>¥0起送</span>
-        					<span>配送费¥9</span>
-        				</div>
-        				<div class="time-distance-wrap">
-        					<span class="distance-wrap">1.09km</span>
-        					<span class="time-wrap">40分钟</span>
-        				</div>
-        			</div>
-        		</div>
-        	</li>
-        	<li class="merchant-item">
-        		<div class="merchant-logo"><img src="https://fuss10.elemecdn.com/9/0c/948c1f6578c4bb879e7ebf718de63jpeg.jpeg?imageMogr/format/webp/" alt=""/></div>
-        		<div class="merchant-item-main">
-        			<div class="merchant-line">
-        				<h3 class="merchant-name">必胜宅急送（人民路店）</h3>
-        				<div class="support-wrap">
-        					<div class="activity-wrap">
-        						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">保</i>
-        					</div>
-        					<div class="activity-wrap">
-        						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">票</i>
-        					</div>
-        					<div class="activity-wrap">
-        						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">准</i>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="merchant-line">
-        				<div class="rate-wrap">
-        					<div class="rating-wrap">
-        						<div class="rating-max">
-        							<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
-        						</div>
-        						<div class="rating-rating" style="width:96%;">
-        							<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
-        						</div>
-        					</div>
-        					<span class="merchant-rate">4.8</span>
-        					<span>月售120000件</span>
-        				</div>
-        			</div>
-        			<div class="merchant-line">
-        				<div class="money-limit">
-        					<span>¥0起送</span>
-        					<span>配送费¥9</span>
-        				</div>
-        				<div class="time-distance-wrap">
-        					<span class="distance-wrap">1.09km</span>
-        					<span class="time-wrap">40分钟</span>
-        				</div>
-        			</div>
-        		</div>
-        	</li>
-        	<li class="merchant-item">
-        		<div class="merchant-logo"><img src="https://fuss10.elemecdn.com/9/0c/948c1f6578c4bb879e7ebf718de63jpeg.jpeg?imageMogr/format/webp/" alt=""/></div>
-        		<div class="merchant-item-main">
-        			<div class="merchant-line">
-        				<h3 class="merchant-name">必胜宅急送（人民路店）</h3>
-        				<div class="support-wrap">
-        					<div class="activity-wrap">
-        						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">保</i>
-        					</div>
-        					<div class="activity-wrap">
-        						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">票</i>
-        					</div>
-        					<div class="activity-wrap">
-        						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">准</i>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="merchant-line">
-        				<div class="rate-wrap">
-        					<div class="rating-wrap">
-        						<div class="rating-max">
-        							<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
-        						</div>
-        						<div class="rating-rating" style="width:96%;">
-        							<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
-        						</div>
-        					</div>
-        					<span class="merchant-rate">4.8</span>
-        					<span>月售120000件</span>
-        				</div>
-        			</div>
-        			<div class="merchant-line">
-        				<div class="money-limit">
-        					<span>¥0起送</span>
-        					<span>配送费¥9</span>
-        				</div>
-        				<div class="time-distance-wrap">
-        					<span class="distance-wrap">1.09km</span>
-        					<span class="time-wrap">40分钟</span>
-        				</div>
-        			</div>
-        		</div>
-        	</li>
-        	<li class="merchant-item">
-        		<div class="merchant-logo"><img src="https://fuss10.elemecdn.com/9/0c/948c1f6578c4bb879e7ebf718de63jpeg.jpeg?imageMogr/format/webp/" alt=""/></div>
-        		<div class="merchant-item-main">
-        			<div class="merchant-line">
-        				<h3 class="merchant-name">必胜宅急送（人民路店）</h3>
-        				<div class="support-wrap">
-        					<div class="activity-wrap">
-        						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">保</i>
-        					</div>
-        					<div class="activity-wrap">
-        						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">票</i>
-        					</div>
-        					<div class="activity-wrap">
-        						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">准</i>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="merchant-line">
-        				<div class="rate-wrap">
-        					<div class="rating-wrap">
-        						<div class="rating-max">
-        							<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
-        						</div>
-        						<div class="rating-rating" style="width:96%;">
-        							<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
-        						</div>
-        					</div>
-        					<span class="merchant-rate">4.8</span>
-        					<span>月售120000件</span>
-        				</div>
-        			</div>
-        			<div class="merchant-line">
-        				<div class="money-limit">
-        					<span>¥0起送</span>
-        					<span>配送费¥9</span>
-        				</div>
-        				<div class="time-distance-wrap">
-        					<span class="distance-wrap">1.09km</span>
-        					<span class="time-wrap">40分钟</span>
-        				</div>
-        			</div>
-        		</div>
-        	</li>
-        </ul>
+            <h3 class="recommand-merchant-title">推荐商家</h3>
+            <ul class="merchant-list">
+            	<li class="merchant-item" v-for="item in restaurants">
+            		<div class="merchant-logo"><img src="https://fuss10.elemecdn.com/9/0c/948c1f6578c4bb879e7ebf718de63jpeg.jpeg?imageMogr/format/webp/" alt=""/></div>
+            		<div class="merchant-item-main">
+            			<div class="merchant-line">
+            				<h3 class="merchant-name">必胜宅急送（人民路店）</h3>
+            				<div class="support-wrap">
+            					<div class="activity-wrap">
+            						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">保</i>
+            					</div>
+            					<div class="activity-wrap">
+            						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">票</i>
+            					</div>
+            					<div class="activity-wrap">
+            						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">准</i>
+            					</div>
+            				</div>
+            			</div>
+            			<div class="merchant-line">
+            				<div class="rate-wrap">
+            					<div class="rating-wrap">
+            						<div class="rating-max">
+            							<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
+            						</div>
+            						<div class="rating-rating" style="width:96%;">
+            							<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
+            						</div>
+            					</div>
+            					<span class="merchant-rate">4.8</span>
+            					<span>月售120000件</span>
+            				</div>
+            			</div>
+            			<div class="merchant-line">
+            				<div class="money-limit">
+            					<span>¥0起送</span>
+            					<span>配送费¥9</span>
+            				</div>
+            				<div class="time-distance-wrap">
+            					<span class="distance-wrap">1.09km</span>
+            					<span class="time-wrap">40分钟</span>
+            				</div>
+            			</div>
+            		</div>
+            	</li>
+            </ul>
     </div>
 </template>
 <style>
@@ -510,7 +252,15 @@
 }
 </style>
 <script>
+import {getRestList} from '../../service/getData.js';
 export default{
-	
+	data:function(){
+        return {
+            restaurants:[]
+        };
+    },
+    mounted:function(){
+        getRestList().then(msg => this.restaurants = msg);
+    }
 };
 </script>
