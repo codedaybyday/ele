@@ -153,6 +153,7 @@ export default{
             this.position = msg;
             console.log(this.city_info);
         });*/
+        console.log('indexHeader');
         this.getCityInfo()
         .then(getWeatherInfo)
         .then(msg => this.weather_info = msg)

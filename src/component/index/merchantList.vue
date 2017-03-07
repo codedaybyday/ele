@@ -3,10 +3,10 @@
             <h3 class="recommand-merchant-title">推荐商家</h3>
             <ul class="merchant-list">
             	<li class="merchant-item" v-for="item in restaurants">
-            		<div class="merchant-logo"><img src="https://fuss10.elemecdn.com/9/0c/948c1f6578c4bb879e7ebf718de63jpeg.jpeg?imageMogr/format/webp/" alt=""/></div>
+            		<div class="merchant-logo"><img :src="pic_root_url+item.name.substr(0,1)+'/'+item.name.substr(1,2)+'/'+item.name.substr(2)+'.'+getExt(item.name)" alt=""/></div>
             		<div class="merchant-item-main">
             			<div class="merchant-line">
-            				<h3 class="merchant-name">必胜宅急送（人民路店）</h3>
+            				<h3 class="merchant-name">{{item.name}}</h3>
             				<div class="support-wrap">
             					<div class="activity-wrap">
             						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">保</i>
@@ -252,15 +252,24 @@
 }
 </style>
 <script>
-import {getRestList} from '../../service/getData.js';
+import {mapActions} from 'vuex';
 export default{
 	data:function(){
         return {
+            pic_root_url:'https://fuss10.elemecdn.com/',
             restaurants:[]
         };
     },
+    methods:{
+        ...mapActions(['getRestList']),
+        getExt(str){
+            let pattern = /(png|jpeg)$/;
+            return pattern.exec(str)[1];
+        }
+    },
     mounted:function(){
-        getRestList().then(msg => this.restaurants = msg);
+        console.log('merchantList');
+        this.getRestList().then(msg => this.restaurants = msg);
     }
 };
 </script>

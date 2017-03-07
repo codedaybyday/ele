@@ -75,13 +75,13 @@ export default{
                 len = parseInt(this.food_entry.length/8),
                 group_len = 8;
             for(let i=0;i<len;i++){
-                arr[i] = this.food_entry.slice(i*group_len,group_len);
+                arr[i] = this.food_entry.slice(i*group_len,(i+1)*group_len);
             }
-            console.log(arr);
             return arr;
         }
     },
     mounted:function(){
+        console.log('foodEntryList');
         getFoodEntry().then(msg => this.food_entry = msg);
     }
 };

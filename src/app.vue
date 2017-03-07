@@ -276,7 +276,10 @@ export default{
 		IndexHeader,
 		MerchantList,
 		FoodEntryList
-	}
+	},
+    mounted:function(){
+        console.log('父组件渲染完成');
+    }
 }
 
 </script>

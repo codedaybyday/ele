@@ -16,15 +16,3 @@ export const getFoodEntry = () => fetch('GET','/v2/index_entry',{
 	group_type:1,
 	flags:['F']
 });
-export const getRestList = () => {
-	let state = store.state;
-	let { latitude,longitude} = state;
-	return fetch('GET','/shopping/restaurants',{
-		longitude:longitude,
-		latitude:latitude,
-		offset:0,
-		limit:20,
-		terminal:'h5',
-		extras:['activities']
-	})
-};

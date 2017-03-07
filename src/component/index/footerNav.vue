@@ -66,6 +66,8 @@
 </style>
 <script>
 export default{
-	
+	mounted:function(){
+        console.log('footerNav');
+    }
 };
 </script>
