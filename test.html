@@ -37,9 +37,21 @@ function fetch(type = 'GET',url,data){
 		}
 	});
 };
-var p = fetch('GET','data.json',{});
+/*var p = fetch('GET','data.json',{});
 console.log(p.then(function(val){
 	console.log(val)
-}));
+}));*/
+function timeout(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+async function asyncPrint(value, ms) {
+  await timeout(ms).then(() => console.log('timeout'));
+  console.log(value)
+}
+
+asyncPrint('hello world', 50);
 </script>
 </html>

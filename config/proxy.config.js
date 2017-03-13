@@ -18,5 +18,10 @@ module.exports = {
 		target:'https://mainsite-restapi.ele.me',
 		changeOrigin: true,
 		secure: false
+	},
+	'/search':{
+		target:'https://h5.ele.me',
+		changeOrigin: true,
+		secure: false
 	}
 };

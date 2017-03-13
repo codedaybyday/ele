@@ -2,6 +2,10 @@ import Vue from 'vue';
 import App from './app.vue';
 import $ from 'jquery';
 import store from './store';
+/*let Vue = require('vue');
+let App = require('./app.vue').default;
+let $ = require('jquery');
+let store = require('./store').default;*/
 
 const originWidth = 375;
 $(function(){

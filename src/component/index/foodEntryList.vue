@@ -82,7 +82,7 @@ export default{
     },
     mounted:function(){
         console.log('foodEntryList');
-        getFoodEntry().then(msg => this.food_entry = msg);
+        //getFoodEntry().then(msg => this.food_entry = msg);
     }
 };
 </script>

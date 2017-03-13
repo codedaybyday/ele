@@ -3,19 +3,13 @@
             <h3 class="recommand-merchant-title">推荐商家</h3>
             <ul class="merchant-list">
             	<li class="merchant-item" v-for="item in restaurants">
-            		<div class="merchant-logo"><img :src="pic_root_url+item.name.substr(0,1)+'/'+item.name.substr(1,2)+'/'+item.name.substr(2)+'.'+getExt(item.name)" alt=""/></div>
+            		<div class="merchant-logo"><img :src="getImagePath(item.image_path)" alt=""/></div>
             		<div class="merchant-item-main">
             			<div class="merchant-line">
-            				<h3 class="merchant-name">{{item.name}}</h3>
+            				<h3 class="merchant-name" :class="item.is_premium?'merchant-name-premium':''">{{item.name}}</h3>
             				<div class="support-wrap">
-            					<div class="activity-wrap">
-            						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">保</i>
-            					</div>
-            					<div class="activity-wrap">
-            						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">票</i>
-            					</div>
-            					<div class="activity-wrap">
-            						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">准</i>
+            					<div class="activity-wrap" v-for="item2 in item.supports">
+            						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">{{item2.icon_name}}</i>
             					</div>
             				</div>
             			</div>
@@ -26,26 +20,27 @@
             							<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
             						</div>
             						<div class="rating-rating" style="width:96%;">
-            							<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
+            							<svg v-for="n in Math.round(item.rating)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
             						</div>
             					</div>
-            					<span class="merchant-rate">4.8</span>
-            					<span>月售120000件</span>
+            					<span class="merchant-rate">{{item.rating}}</span>
+            					<span>月售{{item.recent_order_num}}单</span>
             				</div>
             			</div>
             			<div class="merchant-line">
             				<div class="money-limit">
-            					<span>¥0起送</span>
-            					<span>配送费¥9</span>
+            					<span>¥{{item.piecewise_agent_fee.extra_fee}}起送</span>
+            					<span>配送费¥{{item.float_delivery_fee}}</span>
             				</div>
             				<div class="time-distance-wrap">
-            					<span class="distance-wrap">1.09km</span>
-            					<span class="time-wrap">40分钟</span>
+            					<span class="distance-wrap">{{(item.distance/1000).toFixed(2)}}km</span>
+            					<span class="time-wrap">{{item.order_lead_time}}分钟</span>
             				</div>
             			</div>
             		</div>
             	</li>
             </ul>
+            <p class="load-more"><span>正在载入更多商家</span></p>
     </div>
 </template>
 <style>
@@ -120,7 +115,7 @@
     font-size: .4rem;
     line-height: .426667rem;
 }
-.merchant-name::before{
+.merchant-name-premium::before{
 	margin-right: .133333rem;
     padding: 0 .066667rem;
     height: .4rem;
@@ -250,26 +245,35 @@
     color: #ddd;
     content: "/";
 }
+.load-more{
+    text-align: center;
+    line-height: 3;
+    color: #999;
+    margin-bottom:1.333333rem;
+}
 </style>
 <script>
 import {mapActions} from 'vuex';
 export default{
-	data:function(){
+	data(){
         return {
-            pic_root_url:'https://fuss10.elemecdn.com/',
             restaurants:[]
         };
     },
-    methods:{
-        ...mapActions(['getRestList']),
+    methods:Object.assign(mapActions(['getRestList']),{
         getExt(str){
-            let pattern = /(png|jpeg)$/;
-            return pattern.exec(str)[1];
+            let re = /(png|jpeg)$/.exec(str);
+            return re && re[1];
+        },
+        getImagePath(image_path){
+            let pic_root_url = 'https://fuss10.elemecdn.com/';
+            return pic_root_url+image_path.substr(0,1)+'/'+image_path.substr(1,2)+'/'+image_path.substr(3,image_path.length-2)+'.'+this.getExt(image_path)
         }
-    },
-    mounted:function(){
+    }),
+    mounted(){
         console.log('merchantList');
-        this.getRestList().then(msg => this.restaurants = msg);
+        //this.getRestList();
+        //this.getRestList().then(msg => this.restaurants = msg);
     }
 };
 </script>

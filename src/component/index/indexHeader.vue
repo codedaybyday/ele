@@ -135,7 +135,7 @@ import {mapActions, mapState} from 'vuex';
 import {fetch} from '../../utils/fetch.js';
 import {getPos,getWeatherInfo,getHotSearchWords,getFoodEntry} from '../../service/getData.js';
 export default{
-	data:function(){
+	data(){
         return {
             city_info:{},
             position:{
@@ -148,13 +148,14 @@ export default{
     },
     computed:mapState(['latitude','longitude']),
     methods:mapActions(['getCityInfo','getPos']),//{...mapActions(['get_city_info'])}这样写报错了？？？
-    mounted:function(){
-        /*getPos().then((msg) => {
-            this.position = msg;
-            console.log(this.city_info);
-        });*/
+    async beforeMount(){
+        console.log('a');
+        let res = await this.getCityInfo();
+        console.log('b',res);
+    },
+    mounted(){
         console.log('indexHeader');
-        this.getCityInfo()
+        /*this.getCityInfo()
         .then(getWeatherInfo)
         .then(msg => this.weather_info = msg)
         .then(getPos)
@@ -162,7 +163,8 @@ export default{
         .then(getHotSearchWords)
         .then(msg => this.hot_search_words = msg);
         
-        getFoodEntry().then(msg => this.food_entry = msg);
+        getFoodEntry().then(msg => this.food_entry = msg);*/
+        getWeatherInfo().then( msg => this.weather_info = msg );
     }
 };
 </script>

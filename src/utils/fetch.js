@@ -1,4 +1,4 @@
-export const fetch = (type = 'GET',url,data) => new Promise((resolve,reject) => {
+/*export const fetch = (type = 'GET',url,data) => new Promise((resolve,reject) => {
 	let xhr = new XMLHttpRequest(),
 		data_str = '';
 
@@ -29,4 +29,20 @@ export const fetch = (type = 'GET',url,data) => new Promise((resolve,reject) => 
 		xhr.open(type,url,true);
 		xhr.send(data);
 	}
-});
+});*/
+export default async (type='GET',url,data) => {
+	let headers = new Headers({
+		'Content-Type':'application/json',
+		'Accept':'application/json'
+	});
+	let init = {
+		method:type,
+		headers:headers,
+		mode:'cros',
+		cache:'default'
+	};
+	//let request = new Request(url,init);
+	let res = await fetch(url,init);
+	let resJson = await res.json();
+	return resJson;
+};
