@@ -4,7 +4,7 @@ export const getPos = () => fetch('GET','/v2/pois/wtw3sjq6n6um',{});
 export const getWeatherInfo = () => { 
 	let state = store.state;
 	let { latitude,longitude} = state;
-	console.log(latitude,longitude,1)
+	console.log(latitude,longitude,11)
 	return fetch('GET','/bgs/weather/current',{longitude:longitude,latitude:latitude});
 };
 export const getHotSearchWords = () => {

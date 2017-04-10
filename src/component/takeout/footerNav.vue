@@ -1,21 +1,21 @@
 <template>
 	<nav class="footer-nav">
-    	<a href="">
+    	<router-link to="/takeout">
     		<svg class="footer-nav-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#index.18edf5a"></use></svg>
     		<span class="footer-nav-name">外卖</span>
-    	</a>
-    	<a href="">
+		</router-link>
+    	<router-link to="/foo">
     		<svg class="footer-nav-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#discover-regular.8ef537f"></use></svg>
     		<span class="footer-nav-name">发现</span>
-    	</a>
-    	<a href="">
+    	</router-link>
+    	<router-link to="/hha">
     		<svg class="footer-nav-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#order-regular.41c17f8"></use></svg>
     		<span class="footer-nav-name">订单</span>
-    	</a>
-    	<a href="">
+    	</router-link>
+    	<router-link to="/hhh">
     		<svg class="footer-nav-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#profile-regular.c151d62"></use></svg>
     		<span class="footer-nav-name">我的</span>
-    	</a>
+    	</router-link>
     </nav>
 </template>
 <style>
@@ -66,7 +66,7 @@
 </style>
 <script>
 export default{
-	mounted:function(){
+	mounted(){
         console.log('footerNav');
     }
 };

@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div>
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
              style="position:absolute;width:0;height:0">
             <defs>
@@ -240,37 +240,10 @@
                 </symbol>
             </defs>
         </svg>
-        <router-view></router-view>
-        <FooterNav></FooterNav>
     </div>
 </template>
-<style>
-*{
-	padding: 0;
-	margin:0;
-	list-style: none;
-}
-img{max-width: 100%;}
-button, input, select, textarea {
-    outline: none;
-    border: none;
-    font-size: inherit;
-    font-family: inherit;
-}
-a {
-    outline: none;
-    color: #333;
-    text-decoration: none;
-}
-</style>
 <script>
-    import FooterNav from './component/takeout/footerNav.vue';
-    import svgs from './component/svg.vue';
     export default{
-        components:{
-            FooterNav,
-            svgs
-        }
-    }
 
+    }
 </script>

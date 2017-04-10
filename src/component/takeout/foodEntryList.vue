@@ -64,13 +64,13 @@
 <script>
 import {getFoodEntry} from '../../service/getData.js';
 export default{
-	data:function(){
+	data(){
         return {
             food_entry:[]
         };
     },
     computed:{
-        food_entry_groups:function(){
+        food_entry_groups(){
             let arr = [],
                 len = parseInt(this.food_entry.length/8),
                 group_len = 8;
@@ -80,7 +80,7 @@ export default{
             return arr;
         }
     },
-    mounted:function(){
+    mounted(){
         console.log('foodEntryList');
         //getFoodEntry().then(msg => this.food_entry = msg);
     }

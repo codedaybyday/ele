@@ -148,13 +148,12 @@ export default{
     },
     computed:mapState(['latitude','longitude']),
     methods:mapActions(['getCityInfo','getPos']),//{...mapActions(['get_city_info'])}这样写报错了？？？
-    async beforeMount(){
+    /*async beforeMount(){
         console.log('a');
         let res = await this.getCityInfo();
         console.log('b',res);
-    },
+    },*/
     mounted(){
-        console.log('indexHeader');
         /*this.getCityInfo()
         .then(getWeatherInfo)
         .then(msg => this.weather_info = msg)
@@ -164,6 +163,7 @@ export default{
         .then(msg => this.hot_search_words = msg);
         
         getFoodEntry().then(msg => this.food_entry = msg);*/
+        console.log(this.latitude,this.longitude);
         getWeatherInfo().then( msg => this.weather_info = msg );
     }
 };
