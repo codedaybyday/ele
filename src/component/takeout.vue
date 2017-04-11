@@ -25,7 +25,6 @@
         },*/
         mounted(){
             //console.log('父元素渲染完成');
-            this.getCityInfo();
         }
     }
 </script>

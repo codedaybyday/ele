@@ -17,8 +17,16 @@ export default{
 			})
 		})
 	},
-	async getWeatherInfo({dispatch,commit}){
+	async getWeatherInfo({dispatch,commit,state}){
 		await dispatch('getCityInfo');
-		commit('GET_WEATHER_INFO');
+		let { latitude,longitude} = state;
+		return fetch('GET','/bgs/weather/current',{longitude:longitude,latitude:latitude});
+	},
+	getPos(){
+		return fetch('GET','/v2/pois/wtw3sjq6n6um',{})
+	},
+	getHotSearchWords({state}){
+		let { latitude,longitude} = state;
+		return fetch('GET','/shopping/v3/hot_search_words',{longitude:longitude,latitude:latitude});
 	}
 }

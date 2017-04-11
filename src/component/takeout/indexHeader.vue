@@ -133,7 +133,7 @@ header{
 <script>
 import {mapActions, mapState, mapMutations} from 'vuex';
 import {fetch} from '../../utils/fetch.js';
-import {getPos,getHotSearchWords,getFoodEntry} from '../../service/getData.js';
+//import {getPos,getHotSearchWords,getFoodEntry} from '../../service/getData.js';
 export default{
 	data(){
         return {
@@ -141,13 +141,17 @@ export default{
             position:{
                 name:'地址获取中...'
             },
-            weather_info:{},
+            weather_info:{
+                temperature:'',
+                description:'',
+                image_hash:''
+            },
             hot_search_words:[],
             food_entry:[]
         };
     },
     computed:mapState(['latitude','longitude']),
-    methods:mapActions(['getCityInfo','getPos','getWeatherInfo']),//{...mapActions(['get_city_info'])}这样写报错了？？？
+    methods:mapActions(['getCityInfo','getWeatherInfo','getPos','getHotSearchWords','getFoodEntry']),//{...mapActions(['get_city_info'])}这样写报错了？？？
     /*async beforeMount(){
         console.log('a');
         let res = await this.getCityInfo();
@@ -166,6 +170,8 @@ export default{
         //getWeatherInfo().then( msg => this.weather_info = msg );
         //console.log('header渲染完成');
         this.getWeatherInfo().then(msg => this.weather_info = msg);
+        this.getPos().then(msg => this.position = msg);
+        this.getHotSearchWords(msg => this.hot_search_words = msg);
     }
 };
 </script>

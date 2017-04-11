@@ -9,10 +9,5 @@ export default{
 		console.log(state);
 		let { latitude,longitude} = state;
 		console.log(state.latitude,state.longitude);
-	},
-	[mutation_types.GET_WEATHER_INFO](state){
-		let { latitude,longitude} = state;
-		//console.log(latitude,longitude,111);
-		return fetch('GET','/bgs/weather/current',{longitude:longitude,latitude:latitude});
 	}
 }

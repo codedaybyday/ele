@@ -49,7 +49,6 @@ export default async (type='GET',url,data) => {
 		}
 		search = search.join('&');
 		url = [url,search].join('?');
-		console.log(url);
 	}
 	let res = await fetch(url,init);
 	let resJson = await res.json();
