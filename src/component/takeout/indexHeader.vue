@@ -131,9 +131,9 @@ header{
 }
 </style>
 <script>
-import {mapActions, mapState} from 'vuex';
+import {mapActions, mapState, mapMutations} from 'vuex';
 import {fetch} from '../../utils/fetch.js';
-import {getPos,getWeatherInfo,getHotSearchWords,getFoodEntry} from '../../service/getData.js';
+import {getPos,getHotSearchWords,getFoodEntry} from '../../service/getData.js';
 export default{
 	data(){
         return {
@@ -147,7 +147,7 @@ export default{
         };
     },
     computed:mapState(['latitude','longitude']),
-    methods:mapActions(['getCityInfo','getPos']),//{...mapActions(['get_city_info'])}这样写报错了？？？
+    methods:mapActions(['getCityInfo','getPos','getWeatherInfo']),//{...mapActions(['get_city_info'])}这样写报错了？？？
     /*async beforeMount(){
         console.log('a');
         let res = await this.getCityInfo();
@@ -163,8 +163,9 @@ export default{
         .then(msg => this.hot_search_words = msg);
         
         getFoodEntry().then(msg => this.food_entry = msg);*/
-        console.log(this.latitude,this.longitude);
-        getWeatherInfo().then( msg => this.weather_info = msg );
+        //getWeatherInfo().then( msg => this.weather_info = msg );
+        //console.log('header渲染完成');
+        this.getWeatherInfo().then(msg => this.weather_info = msg);
     }
 };
 </script>

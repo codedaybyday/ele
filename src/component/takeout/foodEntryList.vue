@@ -81,7 +81,7 @@ export default{
         }
     },
     mounted(){
-        console.log('foodEntryList');
+        //console.log('foodEntryList');
         //getFoodEntry().then(msg => this.food_entry = msg);
     }
 };

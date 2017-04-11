@@ -20,7 +20,11 @@
             FoodEntryList
         },
         methods:mapActions(['getCityInfo']),
+        /*async beforeMounted(){
+            await this.getCityInfo;
+        },*/
         mounted(){
+            //console.log('父元素渲染完成');
             this.getCityInfo();
         }
     }

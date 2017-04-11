@@ -42,6 +42,15 @@ export default async (type='GET',url,data) => {
 		cache:'default'
 	};
 	//let request = new Request(url,init);
+	if(type == 'GET'){
+		let search = [];
+		for(let i in data){
+			search.push([i,data[i]].join('='));
+		}
+		search = search.join('&');
+		url = [url,search].join('?');
+		console.log(url);
+	}
 	let res = await fetch(url,init);
 	let resJson = await res.json();
 	return resJson;

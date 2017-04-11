@@ -271,7 +271,7 @@ export default{
         }
     }),
     mounted(){
-        console.log('merchantList');
+        //console.log('merchantList');
         //this.getRestList();
         //this.getRestList().then(msg => this.restaurants = msg);
     }
