@@ -1,13 +1,13 @@
 <template>
-    <div>
-        <IndexHeader v-if="info"/>
+    <div v-if="longitude && latitude">
+        <IndexHeader/>
         <FoodEntryList/>
         <MerchantList/>
     </div>
 </template>
 <style></style>
 <script>
-    import FooterNav from './takeout/footerNav.vue';
+    import FooterNav from './common/footerNav.vue';
     import IndexHeader from './takeout/indexHeader.vue';
     import MerchantList from './takeout/merchantList.vue';
     import FoodEntryList from './takeout/foodEntryList.vue';
@@ -15,7 +15,6 @@
     export default{
         data(){
             return {
-                info:{}
             };
         },
         components:{
@@ -24,10 +23,11 @@
             MerchantList,
             FoodEntryList
         },
+        computed:mapState(['latitude','longitude']),
         methods:Object.assign(mapActions(['getCityInfo']),mapMutations(['GET_POSITION'])),
         async beforeMount(){
-            this.info = await this.getCityInfo();
-            this.GET_POSITION(this.info);
+            let msg = await this.getCityInfo();
+            this.GET_POSITION(msg);
         },
         mounted(){
             //console.log('父元素渲染完成');

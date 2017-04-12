@@ -62,7 +62,8 @@
 }
 </style>
 <script>
-import {getFoodEntry} from '../../service/getData.js';
+//import {getFoodEntry} from '../../service/getData.js';
+import {mapActions} from 'vuex';
 export default{
 	data(){
         return {
@@ -80,9 +81,9 @@ export default{
             return arr;
         }
     },
+    methods:mapActions(['getFoodEntry']),
     mounted(){
-        //console.log('foodEntryList');
-        //getFoodEntry().then(msg => this.food_entry = msg);
+        this.getFoodEntry().then(msg => this.food_entry = msg);
     }
 };
 </script>

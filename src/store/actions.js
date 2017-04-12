@@ -5,20 +5,17 @@ export default{
 		return fetch('GET','/v1/cities',{type:'guess'});
 	},
 	getRestList({dispatch,state}){
-		return dispatch('getCityInfo').then(() => {
-			let { latitude,longitude} = state;
-			return fetch('GET','/shopping/restaurants',{
-				longitude:longitude,
-				latitude:latitude,
-				offset:0,
-				limit:20,
-				terminal:'h5',
-				extras:['activities']
-			})
+		let { latitude,longitude} = state;
+		return fetch('GET','/shopping/restaurants',{
+			longitude:longitude,
+			latitude:latitude,
+			offset:0,
+			limit:20,
+			terminal:'h5',
+			extras:['activities']
 		})
 	},
-	async getWeatherInfo({dispatch,commit,state}){
-		await dispatch('getCityInfo');
+	getWeatherInfo({commit,state}){
 		let { latitude,longitude} = state;
 		return fetch('GET','/bgs/weather/current',{longitude:longitude,latitude:latitude});
 	},
@@ -28,5 +25,12 @@ export default{
 	getHotSearchWords({state}){
 		let { latitude,longitude} = state;
 		return fetch('GET','/shopping/v3/hot_search_words',{longitude:longitude,latitude:latitude});
+	},
+	getFoodEntry(){
+		return fetch('GET','/v2/index_entry',{
+			geohash:'wtw3sjq6n6um',
+			group_type:1,
+			flags:['F']
+		});
 	}
 }

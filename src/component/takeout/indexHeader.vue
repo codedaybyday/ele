@@ -151,29 +151,14 @@ export default{
         };
     },
     computed:mapState(['latitude','longitude']),
-    methods:mapMutations(['testState']),
-    //methods:mapActions(['getCityInfo','getWeatherInfo','getPos','getHotSearchWords','getFoodEntry']),//{...mapActions(['get_city_info'])}这样写报错了？？？
-    /*async beforeMount(){
-        console.log('a');
-        let res = await this.getCityInfo();
-        console.log('b',res);
-    },*/
+    //methods:mapMutations(['testState']),
+    methods:mapActions(['getCityInfo','getWeatherInfo','getPos','getHotSearchWords','getFoodEntry']),//{...mapActions(['get_city_info'])}这样写报错了？？？
     mounted(){
-        /*this.getCityInfo()
-        .then(getWeatherInfo)
-        .then(msg => this.weather_info = msg)
-        .then(getPos)
-        .then(msg => this.position = msg)
-        .then(getHotSearchWords)
-        .then(msg => this.hot_search_words = msg);
-        
-        getFoodEntry().then(msg => this.food_entry = msg);*/
-        //getWeatherInfo().then( msg => this.weather_info = msg );
-        //console.log('header渲染完成');
-        /*this.getWeatherInfo().then(msg => this.weather_info = msg);
+        //this.testState();
+        console.log(1111);
+        this.getWeatherInfo().then(msg => this.weather_info = msg);
         this.getPos().then(msg => this.position = msg);
-        this.getHotSearchWords(msg => this.hot_search_words = msg);*/
-        this.testState();
+        this.getHotSearchWords().then(msg => this.hot_search_words = msg);
     }
 };
 </script>

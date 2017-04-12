@@ -1,46 +1,46 @@
 <template>
 	<div>
-            <h3 class="recommand-merchant-title">推荐商家</h3>
-            <ul class="merchant-list">
-            	<li class="merchant-item" v-for="item in restaurants">
-            		<div class="merchant-logo"><img :src="getImagePath(item.image_path)" alt=""/></div>
-            		<div class="merchant-item-main">
-            			<div class="merchant-line">
-            				<h3 class="merchant-name" :class="item.is_premium?'merchant-name-premium':''">{{item.name}}</h3>
-            				<div class="support-wrap">
-            					<div class="activity-wrap" v-for="item2 in item.supports">
-            						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">{{item2.icon_name}}</i>
-            					</div>
-            				</div>
-            			</div>
-            			<div class="merchant-line">
-            				<div class="rate-wrap">
-            					<div class="rating-wrap">
-            						<div class="rating-max">
-            							<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
-            						</div>
-            						<div class="rating-rating" style="width:96%;">
-            							<svg v-for="n in Math.round(item.rating)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
-            						</div>
-            					</div>
-            					<span class="merchant-rate">{{item.rating}}</span>
-            					<span>月售{{item.recent_order_num}}单</span>
-            				</div>
-            			</div>
-            			<div class="merchant-line">
-            				<div class="money-limit">
-            					<span>¥{{item.piecewise_agent_fee.extra_fee}}起送</span>
-            					<span>配送费¥{{item.float_delivery_fee}}</span>
-            				</div>
-            				<div class="time-distance-wrap">
-            					<span class="distance-wrap">{{(item.distance/1000).toFixed(2)}}km</span>
-            					<span class="time-wrap">{{item.order_lead_time}}分钟</span>
-            				</div>
-            			</div>
-            		</div>
-            	</li>
-            </ul>
-            <p class="load-more"><span>正在载入更多商家</span></p>
+        <h3 class="recommand-merchant-title">推荐商家</h3>
+        <ul class="merchant-list">
+        	<li class="merchant-item" v-for="item in restaurants">
+        		<div class="merchant-logo"><img :src="getImagePath(item.image_path)" alt=""/></div>
+        		<div class="merchant-item-main">
+        			<div class="merchant-line">
+        				<h3 class="merchant-name" :class="item.is_premium?'merchant-name-premium':''">{{item.name}}</h3>
+        				<div class="support-wrap">
+        					<div class="activity-wrap" v-for="item2 in item.supports">
+        						<i class="activity-icon" style="color: rgb(153, 153, 153); border-color: rgb(221, 221, 221);">{{item2.icon_name}}</i>
+        					</div>
+        				</div>
+        			</div>
+        			<div class="merchant-line">
+        				<div class="rate-wrap">
+        					<div class="rating-wrap">
+        						<div class="rating-max">
+        							<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
+        						</div>
+        						<div class="rating-rating" style="width:96%;">
+        							<svg v-for="n in Math.round(item.rating)"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating-star"></use></svg>
+        						</div>
+        					</div>
+        					<span class="merchant-rate">{{item.rating}}</span>
+        					<span>月售{{item.recent_order_num}}单</span>
+        				</div>
+        			</div>
+        			<div class="merchant-line">
+        				<div class="money-limit">
+        					<span>¥{{item.piecewise_agent_fee.extra_fee}}起送</span>
+        					<span>配送费¥{{item.float_delivery_fee}}</span>
+        				</div>
+        				<div class="time-distance-wrap">
+        					<span class="distance-wrap">{{(item.distance/1000).toFixed(2)}}km</span>
+        					<span class="time-wrap">{{item.order_lead_time}}分钟</span>
+        				</div>
+        			</div>
+        		</div>
+        	</li>
+        </ul>
+        <p class="load-more"><span>正在载入更多商家</span></p>
     </div>
 </template>
 <style>
@@ -271,9 +271,7 @@ export default{
         }
     }),
     mounted(){
-        //console.log('merchantList');
-        //this.getRestList();
-        //this.getRestList().then(msg => this.restaurants = msg);
+        this.getRestList().then(msg => this.restaurants = msg);
     }
 };
 </script>

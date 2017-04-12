@@ -1,19 +1,23 @@
 <template>
 	<nav class="footer-nav">
     	<router-link to="/takeout">
-    		<svg class="footer-nav-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#index.18edf5a"></use></svg>
+            <svg class="footer-nav-icon" v-if="path == '/takeout'"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#index" ></use></svg>
+            <svg class="footer-nav-icon" v-else><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#index-regular"></use></svg>
     		<span class="footer-nav-name">外卖</span>
 		</router-link>
     	<router-link to="/foo">
-    		<svg class="footer-nav-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#discover-regular.8ef537f"></use></svg>
+    		<svg class="footer-nav-icon" v-if="path == '/foo'"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#discover"></use></svg>
+            <svg class="footer-nav-icon" v-else><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#discover-regular"></use></svg>
     		<span class="footer-nav-name">发现</span>
     	</router-link>
     	<router-link to="/hha">
-    		<svg class="footer-nav-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#order-regular.41c17f8"></use></svg>
+    		<svg class="footer-nav-icon" v-if="path == '/hha'"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#order"></use></svg>
+            <svg class="footer-nav-icon" v-else><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#order-regular"></use></svg>
     		<span class="footer-nav-name">订单</span>
     	</router-link>
     	<router-link to="/hhh">
-    		<svg class="footer-nav-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#profile-regular.c151d62"></use></svg>
+    		<svg class="footer-nav-icon" v-if="path == '/hhh'"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#profile"></use></svg>
+            <svg class="footer-nav-icon" v-else><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#profile-regular"></use></svg>
     		<span class="footer-nav-name">我的</span>
     	</router-link>
     </nav>
@@ -49,6 +53,9 @@
 .footer-nav-active{
 	color: #0089dc;
 }
+.router-link-active .footer-nav-name{
+    color:#0089dc;
+}
 .footer-nav-name{
 	display: block;
     color: #666;
@@ -67,7 +74,12 @@
 <script>
 export default{
 	mounted(){
-        //console.log('footerNav');
+        console.log(this.$route.path);
+    },
+    computed:{
+        path:function(){
+            return this.$route.path;
+        }
     }
 };
 </script>
