@@ -1,6 +1,6 @@
 <template>
     <div>
-        <IndexHeader/>
+        <IndexHeader v-if="info"/>
         <FoodEntryList/>
         <MerchantList/>
     </div>
@@ -11,18 +11,24 @@
     import IndexHeader from './takeout/indexHeader.vue';
     import MerchantList from './takeout/merchantList.vue';
     import FoodEntryList from './takeout/foodEntryList.vue';
-    import {mapActions,mapState} from 'vuex';
+    import {mapActions,mapState,mapMutations} from 'vuex';
     export default{
+        data(){
+            return {
+                info:{}
+            };
+        },
         components:{
             FooterNav,
             IndexHeader,
             MerchantList,
             FoodEntryList
         },
-        methods:mapActions(['getCityInfo']),
-        /*async beforeMounted(){
-            await this.getCityInfo;
-        },*/
+        methods:Object.assign(mapActions(['getCityInfo']),mapMutations(['GET_POSITION'])),
+        async beforeMount(){
+            this.info = await this.getCityInfo();
+            this.GET_POSITION(this.info);
+        },
         mounted(){
             //console.log('父元素渲染完成');
         }

@@ -151,7 +151,8 @@ export default{
         };
     },
     computed:mapState(['latitude','longitude']),
-    methods:mapActions(['getCityInfo','getWeatherInfo','getPos','getHotSearchWords','getFoodEntry']),//{...mapActions(['get_city_info'])}这样写报错了？？？
+    methods:mapMutations(['testState']),
+    //methods:mapActions(['getCityInfo','getWeatherInfo','getPos','getHotSearchWords','getFoodEntry']),//{...mapActions(['get_city_info'])}这样写报错了？？？
     /*async beforeMount(){
         console.log('a');
         let res = await this.getCityInfo();
@@ -169,9 +170,10 @@ export default{
         getFoodEntry().then(msg => this.food_entry = msg);*/
         //getWeatherInfo().then( msg => this.weather_info = msg );
         //console.log('header渲染完成');
-        this.getWeatherInfo().then(msg => this.weather_info = msg);
+        /*this.getWeatherInfo().then(msg => this.weather_info = msg);
         this.getPos().then(msg => this.position = msg);
-        this.getHotSearchWords(msg => this.hot_search_words = msg);
+        this.getHotSearchWords(msg => this.hot_search_words = msg);*/
+        this.testState();
     }
 };
 </script>

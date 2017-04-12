@@ -49,6 +49,10 @@ export default async (type='GET',url,data) => {
 		}
 		search = search.join('&');
 		url = [url,search].join('?');
+	}else{
+		let form_data = new FormData();
+		Object.keys(data).forEach((el) => form_data.append(el,data[el]));
+		init['body'] = form_data;
 	}
 	let res = await fetch(url,init);
 	let resJson = await res.json();
