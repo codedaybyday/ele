@@ -1,32 +1,33 @@
 <template>
 	<div>
-        <div class="food-entry">
-            <div class="food-entry-list-wrap">
-
-                <div class="food-entry-list" v-for="item in food_entry_groups">
+        <div class="food-entry swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" v-for="item in food_entry_groups">
                     <a class="food-entry-item" v-for="item2 in item">
                         <img :src="'//fuss10.elemecdn.com/'+item2.image_url"/>
                         <span class="food-name">{{item2.title}}</span>
                     </a>
                 </div>
             </div>
-			<ul class="food-entry-ctrl">
-				<li class="is-active"></li>
-				<li></li>
-			</ul>
+            <div class="swiper-pagination"></div>
+			<!-- <ul class="food-entry-ctrl">
+                <li class="is-active"></li>
+                <li></li>
+            </ul> -->
         </div>
     </div>
 </template>
 <style>
+@import url('../../plugin/swiper/swiper.min.css');
 .food-entry{
     overflow: hidden;
     height: 4.72rem;
     border-bottom: 1px solid #eee;
     background-color: #fff;
     text-align: center;
-    position: relative;
+    //position: relative;
 }
-.food-entry-list-wrap{position:absolute;width:205%;overflow:hidden;}
+.food-entry-list-wrap{position:absolute;overflow:hidden;}
 .food-entry-list{overflow:hidden;float:left;}
 .food-entry-item{
     float: left;
@@ -64,10 +65,14 @@
 <script>
 //import {getFoodEntry} from '../../service/getData.js';
 import {mapActions} from 'vuex';
+import Swiper from '../../plugin/swiper/swiper.min.js';
 export default{
 	data(){
         return {
-            food_entry:[]
+            food_entry:[],
+            offset:0,
+            limit:20,
+            is_loading:false
         };
     },
     computed:{
@@ -83,7 +88,27 @@ export default{
     },
     methods:mapActions(['getFoodEntry']),
     mounted(){
-        this.getFoodEntry().then(msg => this.food_entry = msg);
+        this.getFoodEntry({offset:this.offset,limit:this.limit}).then(msg => {
+            this.food_entry = msg
+            setTimeout(() => {
+                new Swiper('.swiper-container',{
+                    pagination: '.swiper-pagination',
+                    paginationClickable: true
+                });
+            },0);   
+        });
+        window.onscroll = () => {
+            let docEle = document.documentElement;
+            let body = document.getElementsByTagName('body')[0];
+            //const scale = document.head.querySelector('meta[name="viewport"]').content.split(',').map(el=>el.trim()).filter(el=>el.indexOf('initial-scale')>-1)[0].split('=')[1];
+            if( docEle.offsetHeight-body.scrollTop<=docEle.clientHeight ){
+                console.log('daodile');
+                this.is_loading = true;
+                this.getFoodEntry({offset:this.offset+20,limit:this.limit}).then((msg => {
+                    this.food_entry.push();
+                });
+            }
+        };
     }
 };
 </script>

@@ -26,11 +26,11 @@ export default{
 		let { latitude,longitude} = state;
 		return fetch('GET','/shopping/v3/hot_search_words',{longitude:longitude,latitude:latitude});
 	},
-	getFoodEntry(){
-		return fetch('GET','/v2/index_entry',{
+	getFoodEntry(form){
+		return fetch('GET','/v2/index_entry',Object.assign({
 			geohash:'wtw3sjq6n6um',
 			group_type:1,
 			flags:['F']
-		});
+		},form));
 	}
 }

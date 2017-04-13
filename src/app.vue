@@ -1,7 +1,6 @@
 <template>
     <div id="app">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-             style="position:absolute;width:0;height:0">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
             <defs>
                 <symbol viewBox="0 0 26 31" id="location">
                     <path fill="#FFF" fill-rule="evenodd"
@@ -29,8 +28,7 @@
                 </symbol>
             </defs>
         </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-             style="position:absolute;width:0;height:0">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
             <defs>
                 <symbol viewBox="0 0 1024 1024" id="res-bad">
                     <path fill="#D0021B" fill-rule="evenodd"
@@ -74,8 +72,7 @@
                 </symbol>
             </defs>
         </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-             style="position:absolute;width:0;height:0">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
             <defs>
                 <symbol viewBox="0 0 1024 1024" id="back-top.7a234e5" class="icon">
                     <path d="M109.078 75.5h805.846v134.308H109.076s0-134.308.002-134.308zm805.846 604.384H713.462V948.5H310.538V679.884H109.076L512 276.962l402.924 402.922z"></path>
