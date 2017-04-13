@@ -4,16 +4,14 @@ export default{
 	getCityInfo({commit,state}){
 		return fetch('GET','/v1/cities',{type:'guess'});
 	},
-	getRestList({dispatch,state}){
+	getRestList({dispatch,state},form_data){
 		let { latitude,longitude} = state;
-		return fetch('GET','/shopping/restaurants',{
+		return fetch('GET','/shopping/restaurants',Object.assign({
 			longitude:longitude,
 			latitude:latitude,
-			offset:0,
-			limit:20,
 			terminal:'h5',
 			extras:['activities']
-		})
+		},form_data));
 	},
 	getWeatherInfo({commit,state}){
 		let { latitude,longitude} = state;
@@ -26,11 +24,11 @@ export default{
 		let { latitude,longitude} = state;
 		return fetch('GET','/shopping/v3/hot_search_words',{longitude:longitude,latitude:latitude});
 	},
-	getFoodEntry(form){
-		return fetch('GET','/v2/index_entry',Object.assign({
+	getFoodEntry(){
+		return fetch('GET','/v2/index_entry',{
 			geohash:'wtw3sjq6n6um',
 			group_type:1,
 			flags:['F']
-		},form));
+		});
 	}
 }

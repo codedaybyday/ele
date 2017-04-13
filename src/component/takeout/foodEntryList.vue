@@ -78,8 +78,8 @@ export default{
     computed:{
         food_entry_groups(){
             let arr = [],
-                len = parseInt(this.food_entry.length/8),
-                group_len = 8;
+                len = parseInt(this.food_entry.length/8);
+            const group_len = 8;
             for(let i=0;i<len;i++){
                 arr[i] = this.food_entry.slice(i*group_len,(i+1)*group_len);
             }
@@ -88,7 +88,7 @@ export default{
     },
     methods:mapActions(['getFoodEntry']),
     mounted(){
-        this.getFoodEntry({offset:this.offset,limit:this.limit}).then(msg => {
+        this.getFoodEntry().then(msg => {
             this.food_entry = msg
             setTimeout(() => {
                 new Swiper('.swiper-container',{
@@ -97,18 +97,6 @@ export default{
                 });
             },0);   
         });
-        window.onscroll = () => {
-            let docEle = document.documentElement;
-            let body = document.getElementsByTagName('body')[0];
-            //const scale = document.head.querySelector('meta[name="viewport"]').content.split(',').map(el=>el.trim()).filter(el=>el.indexOf('initial-scale')>-1)[0].split('=')[1];
-            if( docEle.offsetHeight-body.scrollTop<=docEle.clientHeight ){
-                console.log('daodile');
-                this.is_loading = true;
-                this.getFoodEntry({offset:this.offset+20,limit:this.limit}).then((msg => {
-                    this.food_entry.push();
-                });
-            }
-        };
     }
 };
 </script>

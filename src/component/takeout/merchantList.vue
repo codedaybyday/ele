@@ -257,21 +257,37 @@ import {mapActions} from 'vuex';
 export default{
 	data(){
         return {
-            restaurants:[]
+            restaurants:[],
+            limit:20,
+            offset:0
         };
     },
     methods:Object.assign(mapActions(['getRestList']),{
         getExt(str){
-            let re = /(png|jpeg)$/.exec(str);
+            const re = /(png|jpeg)$/.exec(str);
             return re && re[1];
         },
         getImagePath(image_path){
-            let pic_root_url = 'https://fuss10.elemecdn.com/';
-            return pic_root_url+image_path.substr(0,1)+'/'+image_path.substr(1,2)+'/'+image_path.substr(3,image_path.length-2)+'.'+this.getExt(image_path)
+            const pic_root_url = 'https://fuss10.elemecdn.com/';
+            return pic_root_url+image_path.substr(0,1)+'/'+image_path.substr(1,2)+'/'+image_path.substr(3,image_path.length-2)+'.'+this.getExt(image_path);
         }
     }),
     mounted(){
-        this.getRestList().then(msg => this.restaurants = msg);
+        this.getRestList({limit:this.limit,offset:this.offset}).then(msg => this.restaurants = msg);
+        window.onscroll = () => {
+            let docEle = document.documentElement;
+            let body = document.getElementsByTagName('body')[0];
+            //const scale = document.head.querySelector('meta[name="viewport"]').content.split(',').map(el=>el.trim()).filter(el=>el.indexOf('initial-scale')>-1)[0].split('=')[1];
+            if( docEle.offsetHeight-body.scrollTop<=docEle.clientHeight ){
+                if(this.is_loading) return false;
+                this.is_loading = true;
+                this.offset += 20;
+                this.getRestList({limit:this.limit,offset:this.offset}).then(msg =>{
+                    this.restaurants.push(...msg);
+                    this.is_loading = false;
+                });
+            }
+        };
     }
 };
 </script>
