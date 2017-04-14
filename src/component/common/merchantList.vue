@@ -1,6 +1,5 @@
 <template>
 	<div>
-        <h3 class="recommand-merchant-title">推荐商家</h3>
         <ul class="merchant-list">
         	<li class="merchant-item" v-for="item in restaurants">
         		<div class="merchant-logo"><img :src="getImagePath(item.image_path)" alt=""/></div>
@@ -44,16 +43,6 @@
     </div>
 </template>
 <style>
-.recommand-merchant-title{
-	margin-top: 0.266667rem;
-    line-height: 0.906667rem;
-    font-weight: 600;
-    background-color: #fff;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    font-size: 0.4rem;
-    padding-left: 0.4rem;
-}
 .merchant-item{
 	display: flex;
 	-webkit-box-pack: justify;
@@ -253,16 +242,18 @@
 }
 </style>
 <script>
-import {mapActions} from 'vuex';
+import {mapActions,mapState} from 'vuex';
+import isJSON from 'is-json';
 export default{
 	data(){
         return {
-            restaurants:[],
-            limit:20,
-            offset:0
+            restaurants:[]
         };
     },
-    methods:Object.assign(mapActions(['getRestList']),{
+    computed:mapState({
+        form: state => state.merchant_form_data
+    }),
+    methods:Object.assign(mapActions(['getRestList','updateMerchantFormData','clearAndUpdateMerchantFormData']),{
         getExt(str){
             const re = /(png|jpeg)$/.exec(str);
             return re && re[1];
@@ -273,15 +264,41 @@ export default{
         }
     }),
     mounted(){
-        this.getRestList({limit:this.limit,offset:this.offset}).then(msg => this.restaurants = msg);
+        switch(this.$route.path){
+            case '/':
+            case '/takeout':
+            this.updateMerchantFormData({
+                terminal:'h5',
+                extras:['activities']
+            });
+            break;
+            case '/food':
+            let query = this.$route.query;
+            Object.keys(query).map(el => {
+                if(isJSON(query[el])){
+                    query[el] = JSON.parse(query[el]);
+                }
+            })
+            console.log(query);
+            const filter_key = query.filter_key;
+            this.clearAndUpdateMerchantFormData({
+                offset:0,
+                extras:['activities'],
+                restaurant_category_ids:[filter_key.restaurant_category_id.id]
+            });
+            break;
+        }
+        
+        this.getRestList().then(msg => this.restaurants = msg);
         window.onscroll = () => {
             let docEle = document.documentElement;
             let body = document.getElementsByTagName('body')[0];
-            //const scale = document.head.querySelector('meta[name="viewport"]').content.split(',').map(el=>el.trim()).filter(el=>el.indexOf('initial-scale')>-1)[0].split('=')[1];
             if( docEle.offsetHeight-body.scrollTop<=docEle.clientHeight ){
                 if(this.is_loading) return false;
                 this.is_loading = true;
-                this.offset += 20;
+                this.updateMerchantFormData({
+                    offset:this.form.offset+this.form.limit
+                });
                 this.getRestList({limit:this.limit,offset:this.offset}).then(msg =>{
                     this.restaurants.push(...msg);
                     this.is_loading = false;

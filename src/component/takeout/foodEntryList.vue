@@ -3,10 +3,10 @@
         <div class="food-entry swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide" v-for="item in food_entry_groups">
-                    <a class="food-entry-item" v-for="item2 in item">
+                    <router-link class="food-entry-item" v-for="item2 in item" :to="generateEntryUrl(item2.link)">
                         <img :src="'//fuss10.elemecdn.com/'+item2.image_url"/>
                         <span class="food-name">{{item2.title}}</span>
-                    </a>
+                    </router-link>
                 </div>
             </div>
             <div class="swiper-pagination"></div>
@@ -84,9 +84,14 @@ export default{
                 arr[i] = this.food_entry.slice(i*group_len,(i+1)*group_len);
             }
             return arr;
-        }
+        },
+        
     },
-    methods:mapActions(['getFoodEntry']),
+    methods:Object.assign(mapActions(['getFoodEntry']),{
+        generateEntryUrl(link){
+            return '/food?'+decodeURIComponent(link.split('?')[1]);
+        }
+    }),
     mounted(){
         this.getFoodEntry().then(msg => {
             this.food_entry = msg

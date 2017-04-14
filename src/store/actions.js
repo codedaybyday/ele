@@ -4,14 +4,16 @@ export default{
 	getCityInfo({commit,state}){
 		return fetch('GET','/v1/cities',{type:'guess'});
 	},
-	getRestList({dispatch,state},form_data){
-		let { latitude,longitude} = state;
-		return fetch('GET','/shopping/restaurants',Object.assign({
-			longitude:longitude,
-			latitude:latitude,
-			terminal:'h5',
-			extras:['activities']
-		},form_data));
+	getRestList({dispatch,state}){
+		let { latitude,longitude,merchant_form_data} = state;
+		/*longitude:longitude,
+		latitude:latitude,
+		terminal:'h5',
+		extras:['activities'],
+		offset:0,
+		limit:20
+		*/
+		return fetch('GET','/shopping/restaurants',merchant_form_data);
 	},
 	getWeatherInfo({commit,state}){
 		let { latitude,longitude} = state;
@@ -30,5 +32,11 @@ export default{
 			group_type:1,
 			flags:['F']
 		});
+	},
+	updateMerchantFormData({commit},form){
+		commit(mutation_types.UPATE_MERCHANT_FORM_DATA,form);
+	},
+	clearAndUpdateMerchantFormData({commit},form){
+		commit(mutation_types.CLEAR_AND_UPATE_MERCHANT_FORM_DATA,form);
 	}
 }

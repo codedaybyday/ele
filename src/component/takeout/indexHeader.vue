@@ -1,5 +1,5 @@
 <template>
-	<header>
+	<header class="takeout-header">
         <div class="header-top">
             <div class="header-address">
                 <svg class="address-icon">
@@ -25,7 +25,7 @@
     </header>
 </template>
 <style>
-header{
+.takeout-header{
 	background: #0096ff;
 	padding:0.266667rem 0.373333rem;
 	color:#fff;

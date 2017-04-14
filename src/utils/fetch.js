@@ -44,9 +44,15 @@ export default async (type='GET',url,data) => {
 	//let request = new Request(url,init);
 	if(type == 'GET'){
 		let search = [];
-		for(let i in data){
-			search.push([i,data[i]].join('='));
-		}
+		Object.entries(data).forEach((el) => {
+			if(Array.isArray(el[1])){
+				el[1].forEach((el3) => {
+					search.push([el[0]+'[]',el3].join('='));
+				});
+			}else{
+				search.push(el.join('='));
+			}
+		});
 		search = search.join('&');
 		url = [url,search].join('?');
 	}else{

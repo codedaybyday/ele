@@ -5,7 +5,17 @@ import getters from './getters.js';
 import mutations from './mutations.js';
 let state = {
 	latitude:'',
-	longitude:''
+	longitude:'',
+	geohash:'wtw3sjq6n6um',
+	merchant_form_data:{
+		offset:0,
+		limit:20,
+		latitude:'',
+		longitude:'',
+		terminal:'',
+		extras:'',
+		keyword:'',
+	}
 };
 Vue.use(Vuex);
 export default new Vuex.Store({
