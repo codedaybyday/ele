@@ -15,7 +15,8 @@ let state = {
 		terminal:'',
 		extras:'',
 		keyword:'',
-	}
+	},
+    restaurants:[]
 };
 Vue.use(Vuex);
 export default new Vuex.Store({

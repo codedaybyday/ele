@@ -4,7 +4,13 @@ export default{
 	getCityInfo({commit,state}){
 		return fetch('GET','/v1/cities',{type:'guess'});
 	},
-	getRestList({dispatch,state}){
+    /**
+	 *
+     * @param commit
+     * @param state
+     * @param type 0表示重新获取，1表示追加
+     */
+	getRestList({commit,state},type=0){
 		let { latitude,longitude,merchant_form_data} = state;
 		/*longitude:longitude,
 		latitude:latitude,
@@ -13,7 +19,13 @@ export default{
 		offset:0,
 		limit:20
 		*/
-		return fetch('GET','/shopping/restaurants',merchant_form_data);
+		fetch('GET','/shopping/restaurants',merchant_form_data).then(msg => {
+			if(type){
+                commit(mutation_types.APPEND_RESTAURANTS,msg)
+			}else{
+                commit(mutation_types.SET_RESTAURANTS,msg)
+			}
+		});
 	},
 	getWeatherInfo({commit,state}){
 		let { latitude,longitude} = state;
@@ -38,5 +50,35 @@ export default{
 	},
 	clearAndUpdateMerchantFormData({commit},form){
 		commit(mutation_types.CLEAR_AND_UPATE_MERCHANT_FORM_DATA,form);
+	},
+	getUrlSchema({state},data){
+		const {longitude,latitude} = state;
+		return fetch('GET','/shopping/restaurant/category/urlschema',Object.assign({
+			longitude:longitude,
+			latitude:latitude
+		},data));
+	},
+	getCategory({state}){
+		const {longitude,latitude} = state;
+		return fetch('GET','/shopping/v2/restaurant/category',{
+			longitude:longitude,
+			latitude:latitude
+		});
+	},
+    getDeliveryModes({state}){
+		const {longitude,latitude} = state;
+		return fetch('GET','/shopping/v1/restaurants/delivery_modes',{
+			longitude:longitude,
+			latitude:latitude,
+			kw:''
+		});
+	},
+	getActivityAttributes({state}){
+		const {longitude,latitude} = state;
+		return fetch('GET','/shopping/v1/restaurants/activity_attributes',{
+			longitude:longitude,
+			latitude:latitude,
+			kw:''
+		});
 	}
 }
