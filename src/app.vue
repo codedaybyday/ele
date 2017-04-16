@@ -274,6 +274,7 @@ a {
     import FooterNav from './component/common/footerNav.vue';
     import svgs from './component/svg.vue';
     import {mapState,mapActions,mapMutations} from 'vuex';
+    //import rem from './utils/rem.js';
     export default{
         components:{
             FooterNav,
@@ -288,6 +289,9 @@ a {
             }
             
         },
+        mounted(){
+            //rem();
+        }
     }
 
 </script>

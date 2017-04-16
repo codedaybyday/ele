@@ -1,6 +1,6 @@
 export default image_path => {
 	function getExt(str){
-        const re = /(png|jpeg)$/.exec(str);
+        const re = /(png|jpeg|gif)$/.exec(str);
         return re && re[1];
     }
     const pic_root_url = 'https://fuss10.elemecdn.com/';

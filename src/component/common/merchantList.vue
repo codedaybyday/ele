@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<ul class="merchant-list">
-			<li class="merchant-item" v-for="item in restaurants">
+			<router-link class="merchant-item" v-for="item in restaurants" to="/shop">
 				<div class="merchant-logo"><img :src="decodeImgUrl(item.image_path)" alt=""/></div>
 				<div class="merchant-item-main">
 					<div class="merchant-line">
@@ -37,7 +37,7 @@
 						</div>
 					</div>
 				</div>
-			</li>
+			</router-link>
 		</ul>
 		<p class="load-more"><span>正在载入更多商家</span></p>
 	</div>

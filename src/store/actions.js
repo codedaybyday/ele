@@ -8,6 +8,7 @@ export default{
 	 *
      * @param commit
      * @param state
+	 *
      * @param type 0表示重新获取，1表示追加
      */
 	getRestList({commit,state},type=0){

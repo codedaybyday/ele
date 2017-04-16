@@ -3,6 +3,7 @@
  */
 import takeout from '../src/component/takeout.vue';
 import food from '../src/component/food.vue';
+import shop from '../src/component/shop.vue';
 export default [
     {
         path:'/',
@@ -15,5 +16,9 @@ export default [
     {
     	path:'/food',
     	component:food
+    },
+    {
+        path:'/shop',
+        component:shop
     }
 ];
