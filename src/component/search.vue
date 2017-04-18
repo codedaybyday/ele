@@ -52,14 +52,12 @@
             window.onscroll = () => {
                 let docEle = document.documentElement;
                 let body = document.getElementsByTagName('body')[0];
-                console.log(this.is_loading,docEle.offsetHeight-body.scrollTop<=docEle.clientHeight && !this.is_end && !this.is_loading);
                 if( docEle.offsetHeight-body.scrollTop<=docEle.clientHeight && !this.is_end && !this.is_loading){
-                    this.updateMerchantFormData({is_loading:true});
                     this.updateMerchantFormData({
-                        offset:this.offset+this.limit
+                        offset:this.offset+this.limit,
+                        is_loading:true
                     });
                     this.getSearchList(1);
-                    this.updateMerchantFormData({is_loading:false});
                 }
             };
         }

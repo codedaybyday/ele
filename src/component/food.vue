@@ -22,7 +22,8 @@
             restaurants:state => state.restaurants,
             offset:state => state.merchant_form_data.offset || 0,
             limit:state => state.merchant_form_data.limit,
-            is_end:state => state.merchant_form_data.is_end
+            is_end:state => state.merchant_form_data.is_end,
+            is_loading:state.merchant_form_data.is_loading
         }),
         methods:Object.assign(mapActions(['getRestList','updateMerchantFormData','clearAndUpdateMerchantFormData']),{
 
@@ -45,14 +46,12 @@
             window.onscroll = () => {
                 let docEle = document.documentElement;
                 let body = document.getElementsByTagName('body')[0];
-                if( docEle.offsetHeight-body.scrollTop<=docEle.clientHeight && !this.is_end){
-                    if(this.is_loading) return false;
-                    this.is_loading = true;
+                if( docEle.offsetHeight-body.scrollTop<=docEle.clientHeight && !this.is_end !&& this.is_loading){
                     this.updateMerchantFormData({
-                        offset:this.offset+this.limit
+                        offset:this.offset+this.limit,
+                        is_loading:true
                     });
                     this.getRestList(1);
-                    this.is_loading = false;
                 }
             };
         }
