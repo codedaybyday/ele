@@ -81,5 +81,8 @@ export default{
 			latitude:latitude,
 			kw:''
 		});
+	},
+	search({state}){
+		return fetch('GET','/shopping/v1/restaurants/search',state.merchant_form_data);
 	}
 }

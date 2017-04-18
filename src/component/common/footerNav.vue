@@ -1,7 +1,7 @@
 <template>
 	<nav class="footer-nav">
-		<router-link to="/takeout">
-			<svg class="footer-nav-icon" v-if="path == '/takeout' || path == '/'"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#index" ></use></svg>
+		<router-link to="/index">
+			<svg class="footer-nav-icon" v-if="path == '/index' || path == '/'"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#index" ></use></svg>
 			<svg class="footer-nav-icon" v-else><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#index-regular"></use></svg>
 			<span class="footer-nav-name">外卖</span>
 		</router-link>

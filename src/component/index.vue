@@ -1,5 +1,6 @@
 <template>
     <div>
+        <svgs/>
         <IndexHeader/>
         <FoodEntryList/>
         <h3 class="recommand-merchant-title">推荐商家</h3>
@@ -21,9 +22,10 @@
 </style>
 <script>
     import FooterNav from './common/footerNav.vue';
-    import IndexHeader from './takeout/indexHeader.vue';
+    import IndexHeader from './index/indexHeader.vue';
     import MerchantList from './common/merchantList.vue';
-    import FoodEntryList from './takeout/foodEntryList.vue';
+    import FoodEntryList from './index/foodEntryList.vue';
+    import svgs from './index/svgs.vue';
     import {mapActions,mapState,mapMutations} from 'vuex';
     export default{
         data(){
@@ -34,7 +36,8 @@
             FooterNav,
             IndexHeader,
             MerchantList,
-            FoodEntryList
+            FoodEntryList,
+            svgs
         },
         mounted(){
         }

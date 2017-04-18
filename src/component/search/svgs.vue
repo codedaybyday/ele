@@ -3,6 +3,13 @@
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
              style="position:absolute;width:0;height:0">
             <defs>
+                <symbol viewBox="0 0 512 512" id="bin">
+                    <path d="M64 160v320c0 17.6 14.4 32 32 32h288c17.6 0 32-14.4 32-32V160H64zm96 288h-32V224h32v224zm64 0h-32V224h32v224zm64 0h-32V224h32v224zm64 0h-32V224h32v224zM424 64H320V24c0-13.2-10.8-24-24-24H184c-13.2 0-24 10.8-24 24v40H56c-13.2 0-24 10.8-24 24v40h416V88c0-13.2-10.8-24-24-24zm-136 0h-96V32.401h96V64z"></path>
+                </symbol>
+                <symbol viewBox="0 0 20 32" id="arrow">
+                    <path fill="#fff"
+                          d="M16.552 5.633l-2.044-2.044L2.243 15.854l12.265 12.557 2.044-2.044L6.331 15.854z"></path>
+                </symbol>
                 <symbol viewBox="0 0 32 32" id="arrow-right">
                     <path fill="#999" d="M26.055 16L10.118 32 6.45 28.142l12.205-12.269L5.944 3.92 9.865-.001z"></path>
                 </symbol>
@@ -120,14 +127,6 @@
                 </symbol>
                 <symbol xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40" id="index.18edf5a">
                     <defs>
-                        <linearGradient id="index.18edf5a_c" x1="50%" x2="50%" y1="100%" y2="0%">
-                            <stop offset="0%" stop-color="#2BAEFF"></stop>
-                            <stop offset="100%" stop-color="#0095FF"></stop>
-                        </linearGradient>
-                        <linearGradient id="index.18edf5a_d" x1="50%" x2="50%" y1="100%" y2="0%">
-                            <stop offset="0%" stop-color="#29ADFF"></stop>
-                            <stop offset="100%" stop-color="#0095FF"></stop>
-                        </linearGradient>
                         <path id="index.18edf5a_a"
                               d="M30.426 22.095l2.678 5.742 2.943-1.372a3.173 3.173 0 0 0 1.537-4.212l-1.339-2.871-5.819 2.713z"></path>
                         <mask id="index.18edf5a_e" width="9.455" height="10.456" x="-1" y="-1">
@@ -154,6 +153,14 @@
                         </g>
                     </g>
                 </symbol>
+                <linearGradient id="index.18edf5a_c" x1="50%" x2="50%" y1="100%" y2="0%">
+                    <stop offset="0%" stop-color="#2BAEFF"></stop>
+                    <stop offset="100%" stop-color="#0095FF"></stop>
+                </linearGradient>
+                <linearGradient id="index.18edf5a_d" x1="50%" x2="50%" y1="100%" y2="0%">
+                    <stop offset="0%" stop-color="#29ADFF"></stop>
+                    <stop offset="100%" stop-color="#0095FF"></stop>
+                </linearGradient>
                 <symbol xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40" id="discover-regular.8ef537f">
                     <defs>
                         <path id="discover-regular.8ef537f_a"
@@ -172,12 +179,7 @@
                     </g>
                 </symbol>
                 <symbol viewBox="0 0 40 40" id="discover.5811137">
-                    <defs>
-                        <linearGradient id="discover.5811137_a" x1="50%" x2="50%" y1="100%" y2="0%">
-                            <stop offset="0%" stop-color="#2BAEFF"></stop>
-                            <stop offset="100%" stop-color="#0095FF"></stop>
-                        </linearGradient>
-                    </defs>
+                    <defs></defs>
                     <g fill="none" fill-rule="evenodd">
                         <path fill="url(#discover.5811137_a)"
                               d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z"></path>
@@ -188,6 +190,10 @@
                               transform="rotate(-45 34.258 3.92)"></path>
                     </g>
                 </symbol>
+                <linearGradient id="discover.5811137_a" x1="50%" x2="50%" y1="100%" y2="0%">
+                    <stop offset="0%" stop-color="#2BAEFF"></stop>
+                    <stop offset="100%" stop-color="#0095FF"></stop>
+                </linearGradient>
                 <symbol xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 38 38" id="order-regular.41c17f8">
                     <defs>
                         <rect id="order-regular.41c17f8_a" width="38" height="38" rx="2"></rect>
@@ -204,12 +210,7 @@
                     </g>
                 </symbol>
                 <symbol viewBox="0 0 38 38" id="order.070ae2a">
-                    <defs>
-                        <linearGradient id="order.070ae2a_a" x1="50%" x2="50%" y1="100%" y2="0%">
-                            <stop offset="0%" stop-color="#2BAEFF"></stop>
-                            <stop offset="100%" stop-color="#0095FF"></stop>
-                        </linearGradient>
-                    </defs>
+                    <defs></defs>
                     <g fill="none" fill-rule="evenodd">
                         <rect width="38" height="38" fill="url(#order.070ae2a_a)" rx="2"></rect>
                         <rect width="24" height="2" x="7" y="8" fill="#FFF" rx="1"></rect>
@@ -217,6 +218,10 @@
                         <rect width="8" height="2" x="7" y="26" fill="#FFF" rx="1"></rect>
                     </g>
                 </symbol>
+                <linearGradient id="order.070ae2a_a" x1="50%" x2="50%" y1="100%" y2="0%">
+                    <stop offset="0%" stop-color="#2BAEFF"></stop>
+                    <stop offset="100%" stop-color="#0095FF"></stop>
+                </linearGradient>
                 <symbol xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 38 38" id="profile-regular.c151d62">
                     <defs>
                         <path id="profile-regular.c151d62_a"
@@ -236,15 +241,14 @@
                     </g>
                 </symbol>
                 <symbol viewBox="0 0 38 38" id="profile.dbc5ebf">
-                    <defs>
-                        <linearGradient id="profile.dbc5ebf_a" x1="50%" x2="50%" y1="100%" y2="0%">
-                            <stop offset="0%" stop-color="#2BAEFF"></stop>
-                            <stop offset="100%" stop-color="#0095FF"></stop>
-                        </linearGradient>
-                    </defs>
+                    <defs></defs>
                     <path fill="url(#profile.dbc5ebf_a)" fill-rule="evenodd"
                           d="M10 11.833V8.999A8.999 8.999 0 0 1 19 0c4.97 0 9 4.04 9 8.999v2.834l-.013.191C27.657 16.981 23.367 21 19 21c-4.616 0-8.64-4.02-8.987-8.976L10 11.833zM0 32.675C0 26.763 10.139 22 19.027 22 27.916 22 38 26.763 38 32.757v3.312C38 37.136 37.098 38 35.997 38H2.003C.897 38 0 37.137 0 36.037v-3.362z"></path>
                 </symbol>
+                <linearGradient id="profile.dbc5ebf_a" x1="50%" x2="50%" y1="100%" y2="0%">
+                    <stop offset="0%" stop-color="#2BAEFF"></stop>
+                    <stop offset="100%" stop-color="#0095FF"></stop>
+                </linearGradient>
                 <symbol viewBox="0 0 126 126" id="expired.1331b14">
                     <path fill="#9B9B9B" fill-rule="evenodd"
                           d="M63 125.5c34.518 0 62.5-27.982 62.5-62.5S97.518.5 63 .5.5 28.482.5 63s27.982 62.5 62.5 62.5zM15.156 66.678l-3.073-1.258 2.868-1.674.248-3.31 2.478 2.21 3.225-.79-1.335 3.04 1.746 2.825-3.302-.33-2.147 2.533-.704-3.245zm4.07-24.55l-2.03-2.625 3.32-.015 1.87-2.744 1.04 3.153 3.187.93-2.677 1.964.1 3.32-2.695-1.94-3.124 1.122 1.01-3.163zm15.8-19.223l-.446-3.29 2.883 1.646 2.99-1.44-.674 3.25 2.294 2.4-3.3.363-1.573 2.924-1.363-3.027-3.267-.592 2.457-2.233zm23.296-8.75l1.258-3.072 1.674 2.868 3.31.248-2.21 2.478.79 3.225-3.04-1.335-2.825 1.746.33-3.302-2.533-2.147 3.245-.704zm24.55 4.072l2.625-2.032.015 3.32 2.744 1.87-3.153 1.04-.93 3.188-1.964-2.677-3.32.1 1.94-2.695-1.122-3.124 3.163 1.01zm27.972 39.095l3.073 1.258-2.868 1.674-.248 3.31-2.478-2.21-3.225.79 1.335-3.04-1.746-2.825 3.302.33 2.147-2.533.704 3.245zm-4.07 24.55l2.03 2.625-3.32.015-1.87 2.744-1.04-3.153-3.187-.93 2.677-1.964-.1-3.32 2.695 1.94 3.124-1.122-1.01 3.163zm-15.8 19.223l.446 3.29-2.883-1.646-2.99 1.44.674-3.25-2.294-2.4 3.3-.363 1.573-2.924 1.363 3.027 3.267.592-2.457 2.233zm-23.296 8.75l-1.258 3.072-1.674-2.868-3.31-.248 2.21-2.478-.79-3.225 3.04 1.335 2.825-1.746-.33 3.302 2.533 2.147-3.245.704zm-24.55-4.072l-2.625 2.032-.015-3.32-2.744-1.87 3.153-1.04.93-3.188 1.964 2.677 3.32-.1-1.94 2.695 1.122 3.124-3.163-1.01zM74.257 41.7a23.764 23.764 0 0 0-22.17.092 23.767 23.767 0 0 0-12.508 18.646l.995.1a22.767 22.767 0 0 1 11.983-17.863 22.764 22.764 0 0 1 21.238-.088l.462-.887zm11.387 22.436A22.764 22.764 0 0 1 74.313 82.1a22.767 22.767 0 0 1-21.5.696l-.44.897a23.767 23.767 0 0 0 22.44-.727A23.764 23.764 0 0 0 86.64 64.214l-.997-.078zM63 122.5C30.14 122.5 3.5 95.86 3.5 63S30.14 3.5 63 3.5s59.5 26.64 59.5 59.5-26.64 59.5-59.5 59.5zm14.127-71.148l1.14 1.975 3.388-1.956-1.14-1.974-3.388 1.956zm2.704-3.14l-1.055-1.83-3.388 1.956 1.056 1.83 3.388-1.957zm.237 8.232l3.388-1.956-1.14-1.974-3.388 1.956 1.14 1.974zm-6.89-8.715a24.73 24.73 0 0 0-.892-1.453 7.288 7.288 0 0 0-.79-.985c.31-.104.617-.227.924-.367a6.52 6.52 0 0 0 .842-.46c.13-.093.226-.12.285-.08.06.04.066.128.017.267a.653.653 0 0 0-.032.378c.03.113.09.253.187.42l.85 1.475 3.39-1.956a39.962 39.962 0 0 0-1.01-1.677c-.25-.383-.472-.665-.67-.847a13.33 13.33 0 0 0 1.857-.767c.19-.09.313-.107.374-.05.062.057.064.148.007.273-.09.2-.128.356-.117.47.01.114.06.247.147.4l.792 1.37c.24-.157.48-.318.718-.483a9.91 9.91 0 0 0 .673-.513l1.02 1.766c-.26.095-.52.204-.78.327-.262.123-.525.243-.79.36l4.655 8.063c.234-.17.46-.333.675-.486.217-.153.43-.318.643-.496l.912 1.58c-.21.085-.434.177-.672.278-.238.1-.534.243-.888.43-.354.185-.79.423-1.307.712a205.733 205.733 0 0 0-3.876 2.238c-.516.307-.943.567-1.28.78-.34.215-.615.402-.828.562-.212.16-.408.31-.586.45l-.912-1.58c.638-.24 1.29-.533 1.958-.882l-4.668-8.085a20.893 20.893 0 0 0-1.67 1.186l-1.02-1.767a21.623 21.623 0 0 0 1.862-.854zm14.762 2.285l3.387-1.956-2.124-3.68-3.388 1.956 2.124 3.68zm-1.45-10.332l-3.387 1.956 1.956 3.387 3.387-1.956-1.956-3.387zm2.11 11.67c.274.634.514 1.305.717 2.01.204.704.36 1.408.47 2.11.11.704.167 1.4.17 2.093a10.19 10.19 0 0 1-.17 1.94c-.51-.15-1.18-.14-2.008.024.213-.974.312-1.88.298-2.723a10.595 10.595 0 0 0-.37-2.558c-.23-.865-.573-1.77-1.028-2.72a48.398 48.398 0 0 0-1.714-3.208l-2.7-4.676a25.767 25.767 0 0 0-.875-1.42 21.753 21.753 0 0 0-.85-1.186c.525-.21 1.043-.45 1.554-.717.51-.267 1.112-.6 1.805-1a60.923 60.923 0 0 0 1.893-1.136 17.45 17.45 0 0 0 1.502-1.047c.137.364.325.787.565 1.267.24.48.517.99.83 1.53l7.535 13.054a6.1 6.1 0 0 1 .46.94.97.97 0 0 1-.036.756c-.115.25-.347.527-.698.832-.35.304-.864.688-1.54 1.15a3.186 3.186 0 0 0-.647-.858 4.97 4.97 0 0 0-1.038-.717 13.81 13.81 0 0 0 1.096-.55c.264-.152.45-.295.555-.43a.502.502 0 0 0 .108-.437 2.097 2.097 0 0 0-.243-.566l-2.172-3.762-3.47 2.004zm-1.954 7.223a6.16 6.16 0 0 0-1.466-.69 6.537 6.537 0 0 0-1.563-.332l.69-1.59a14.604 14.604 0 0 1 3.05.817l-.71 1.794zm-4.033-.027a2.137 2.137 0 0 0-.287.51 6.12 6.12 0 0 0-.26.872 23.78 23.78 0 0 0-.283 1.452c-.1.594-.225 1.34-.37 2.237a3.37 3.37 0 0 0-.92-.078 5.34 5.34 0 0 0-1.096.19 8.492 8.492 0 0 0 .812-2.41c.15-.843.175-1.782.077-2.816.39.034.75.034 1.08 0a8.61 8.61 0 0 0 1.06-.182c.14-.044.227-.04.26.017.03.056.007.126-.074.21zm-17.506-5.745c.68-.392 1.22-.72 1.624-.98.405-.26.798-.538 1.182-.834l1.044 1.81c-.426.19-.86.4-1.3.626a40.64 40.64 0 0 0-1.66.917l5.015 8.688c.21.36.354.684.435.97.082.285.043.584-.118.9-.16.313-.468.676-.924 1.086-.455.41-1.11.918-1.962 1.52a10.17 10.17 0 0 0-.84-.83 7.863 7.863 0 0 0-1.12-.836 20.7 20.7 0 0 0 1.457-.813c.36-.226.625-.43.797-.612.172-.183.262-.346.27-.49a.783.783 0 0 0-.117-.444l-4.68-8.105-4.448 2.568c-.846.488-1.512.886-2 1.195-.485.31-.936.6-1.35.877l-1.03-1.788c.236-.1.472-.204.706-.31.234-.108.484-.234.75-.38a93.69 93.69 0 0 0 2.035-1.132l4.45-2.568a106.39 106.39 0 0 0-1.3-2.202c-.33-.54-.576-.92-.74-1.138.35-.13.72-.29 1.105-.486.387-.194.696-.378.93-.55.192-.147.346-.176.462-.086.117.09.133.205.048.346a.79.79 0 0 0-.08.56c.044.186.098.335.162.446l1.2 2.08zm-1.79 11.537a25.633 25.633 0 0 0-1.934-1.475 35.97 35.97 0 0 0-2.03-1.31l1.267-1.644a38.25 38.25 0 0 1 2.034 1.195c.68.428 1.346.9 1.993 1.412l-1.33 1.822zm-12.53-7.01c.706.293 1.41.608 2.11.942.702.334 1.376.693 2.022 1.078l-1.13 2.12a56.81 56.81 0 0 0-2.01-1.152 41.097 41.097 0 0 0-2.06-1.044l1.067-1.945zM63 118.25c30.514 0 55.25-24.736 55.25-55.25S93.514 7.75 63 7.75 7.75 32.486 7.75 63 32.486 118.25 63 118.25zm-2.237-47.53c.262-.058.562-.097.9-.118.34-.02.753-.04 1.24-.063.52-.025 1.176-.163 1.964-.415.788-.25 1.72-.646 2.794-1.184 1.077-.536 2.303-1.235 3.682-2.096a87.9 87.9 0 0 0 4.634-3.133 10.2 10.2 0 0 0 .24 1.4c.098.378.23.74.394 1.09a321.96 321.96 0 0 1-4.068 2.362 69.403 69.403 0 0 1-3.052 1.65c-.88.445-1.643.802-2.29 1.074s-1.236.483-1.768.633c-.533.15-1.03.256-1.492.32-.462.063-.954.107-1.476.13-.62.046-1.087.126-1.4.24-.31.117-.536.344-.674.682-.123.33-.22.74-.286 1.232a18.89 18.89 0 0 0-.144 1.62 7.14 7.14 0 0 0-1.164-.31 9.118 9.118 0 0 0-1.23-.136c.132-.575.256-1.07.374-1.49.118-.42.23-.785.338-1.096.106-.31.212-.575.318-.793.105-.22.214-.407.326-.564l-3.66-6.34c-.582.337-1.08.634-1.495.892-.415.257-.75.498-1.01.722l-.972-1.684c.293-.132.648-.3 1.066-.505.42-.203.83-.42 1.23-.653a31.8 31.8 0 0 0 1.27-.775c.433-.277.775-.516 1.028-.718.14.4.292.778.46 1.134.17.355.413.81.733 1.364l3.193 5.53zm-15.907-.43l-2.712-4.7-5.425 3.133c-1.456.84-2.783 1.63-3.983 2.368-1.2.74-2.125 1.344-2.778 1.813l-1.237-2.14c.307-.14.708-.335 1.202-.583.494-.25 1.055-.54 1.684-.876a143.593 143.593 0 0 0 4.375-2.429 153.71 153.71 0 0 0 4.442-2.648c1.175-.734 2.054-1.315 2.638-1.745.15.357.367.813.652 1.37a42.88 42.88 0 0 0 1.05 1.915l1.848 3.2a32.46 32.46 0 0 0 1.93 2.96l-2.057 1.188-.72-1.247-9.395 5.424 3.072 5.32c.224.39.415.68.574.875.158.195.345.304.562.327.216.023.5-.045.853-.202.353-.157.838-.405 1.455-.743.876-.47 1.734-.942 2.577-1.42a68.054 68.054 0 0 0 2.465-1.465c.754-.453 1.335-.84 1.743-1.158.407-.318.686-.66.836-1.023.15-.364.185-.81.104-1.334a26.6 26.6 0 0 0-.45-2.124c.843.437 1.734.523 2.67.26.206 1.026.324 1.854.354 2.483.03.628-.083 1.184-.34 1.665-.258.48-.698.943-1.32 1.386-.623.443-1.495.988-2.617 1.636l-2.545 1.47c-.908.524-1.758.996-2.55 1.417-1.063.558-1.902.97-2.517 1.23-.615.264-1.123.368-1.524.313-.402-.055-.75-.274-1.045-.657-.297-.385-.652-.937-1.068-1.658l-3.444-5.965a27.726 27.726 0 0 0-1.155-1.855c-.337-.49-.602-.835-.793-1.04.37-.157.762-.342 1.176-.553.414-.212.79-.425 1.13-.64.185-.125.32-.144.41-.056.087.088.085.214-.005.377a.624.624 0 0 0-.105.394c.015.12.082.286.202.494l.384.665 9.396-5.424zM10.402 63c0-29.05 23.55-52.598 52.598-52.598 29.05 0 52.598 23.55 52.598 52.598 0 29.05-23.55 52.598-52.598 52.598-29.05 0-52.598-23.55-52.598-52.598z"></path>
@@ -272,808 +276,10 @@
                 </symbol>
             </defs>
         </svg>
-        <div class="header-top-wrap">
-            <header class="eleme-header-wrap">
-                <div class="eleme-header-wrap" style="background: rgb(0, 151, 255);">
-                    <div class="eleme-header-left" @click="back()">
-                        <svg>
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left.6f6409e"></use>
-                        </svg>
-                    </div>
-                    <h1 class="eleme-header-center">{{show_name}}</h1></div>
-            </header>
-            <aside class="filter">
-                <div class="filter-header">
-                    <a href="javascript:" class="filter-nav" :class="{active:show_menu}" @click="toggleMenu()">
-                        <span>{{show_menu?'分类':show_name}}</span>
-                        <svg viewBox="0 0 72 32">
-                            <path d="M36 32l36-32h-72z"></path>
-                        </svg>
-                    </a>
-                    <a href="javascript:" class="filter-nav" @click="toggleSort()" :class="{active:show_sort}">
-                        <span>{{sort_name?sort_name:'排序'}}</span>
-                        <svg viewBox="0 0 72 32">
-                            <path d="M36 32l36-32h-72z"></path>
-                        </svg>
-                    </a>
-                    <a href="javascript:" class="filter-nav filter-nav-more" @click="toggleFilter()" :class="{active:show_filter}">
-                        <span>筛选</span>
-                        <svg viewBox="0 0 72 32">
-                            <path d="M36 32l36-32h-72z"></path>
-                        </svg>
-                    </a>
-                </div>
-                <!-- <aside class="loading">加载中...</aside> -->
-                <section class="filter-extend filter-category" :class="{open:show_menu}" @click.stop>
-                    <div class="filter-scroller">
-                        <ul>
-                            <template v-for="(item,index) in menu">
-                                <li class="" v-if="index==0">
-                                    <span>{{item.name}}</span><span class="count">{{item.count}}</span>
-                                </li>
-                                <li :class="{active:active_index==index-1}" v-else @click="active_index = index-1"><img
-                                        :src="decodeImgUrl(item.image_url)" class="icon"><span>{{item.name}}</span>
-                                    <span class="count">{{item.count}}</span>
-                                    <svg class="arrow">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-right"></use>
-                                    </svg>
-                                </li>
-                            </template>
-
-                        </ul>
-                        <ul>
-                            <template v-for="(item,index) in sub_menu[active_index]">
-                                <li class="" @click="search(item)">
-                                    <span>{{item.name}}</span>
-                                    <span class="count">{{item.count}}</span>
-                                </li>
-                            </template>
-                        </ul>
-                    </div>
-                </section>
-                <section class="filter-extend filter-sort" morefilter="" :class="{open:show_sort}">
-                    <ul>
-                        <li class="" @click="orderBy(0,'智能排序')">
-                            <svg>
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#default"></use>
-                            </svg>
-                            <span>智能排序</span>
-                            <svg class="selected">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#selected"></use>
-                            </svg>
-                        </li>
-                        <li class="" @click="orderBy(5,'距离最近')">
-                            <svg>
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#distance"></use>
-                            </svg>
-                            <span>距离最近</span>
-                            <svg class="selected">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#selected"></use>
-                            </svg>
-                        </li>
-                        <li class="" @click="orderBy(6,'销量最高')">
-                            <svg>
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hot"></use>
-                            </svg>
-                            <span>销量最高</span>
-                            <svg class="selected">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#selected"></use>
-                            </svg>
-                        </li>
-                        <li class="" @click="orderBy(1,'起送价最低')">
-                            <svg>
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#price"></use>
-                            </svg>
-                            <span>起送价最低</span>
-                            <svg class="selected">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#selected"></use>
-                            </svg>
-                        </li>
-                        <li class="" @click="orderBy(2,'配送速度最快')">
-                            <svg>
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#speed"></use>
-                            </svg>
-                            <span>配送速度最快</span>
-                            <svg class="selected">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#selected"></use>
-                            </svg>
-                        </li>
-                        <li class="" @click="orderBy(3,'评分最高')">
-                            <svg>
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rating"></use>
-                            </svg>
-                            <span>评分最高</span>
-                            <svg class="selected">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#selected"></use>
-                            </svg>
-                        </li>
-                    </ul>
-                </section>
-                <section class="filter-extend filter-more" :class="{open:show_filter}">
-                    <aside class="loading" v-if="!delivery_modes.length || !activity_attributes.length">加载中...</aside>
-                    <div  class="filter-scroller" v-else>
-                        <dl >
-                            <dt >配送方式</dt>
-                            <dd  class="" v-for="item in delivery_modes">
-                                <svg  class="fengniao">
-                                    <use  xmlns:xlink="http://www.w3.org/1999/xlink"
-                                          xlink:href="#fengniao"></use>
-                                </svg>
-                                <svg  class="selected-icon">
-                                    <use  xmlns:xlink="http://www.w3.org/1999/xlink"
-                                          xlink:href="#selected"></use>
-                                </svg><span >{{item.text}}</span></dd>
-                        </dl>
-                        <dl >
-                            <dt >商家属性 (可多选)</dt>
-                            <dd  class="" v-for="item in activity_attributes">
-                                <svg  class="selected-icon">
-                                    <use  xmlns:xlink="http://www.w3.org/1999/xlink"
-                                          xlink:href="#selected"></use>
-                                </svg>
-                                <i :style="{color:item.icon_color}">
-                                    {{item.icon_name}}
-                                </i><span >{{item.name}}</span></dd>
-                        </dl></div>
-                    <div class="filter-btn">
-                        <a href="javascript:">清空</a>
-                        <a href="javascript:"> 确定</a>
-                    </div>
-                </section>
-                <section class="filter-modal" :class="{open:show_menu||show_sort||show_filter}" @click="close()"></section>
-            </aside>
-        </div>
     </div>
 </template>
 <style>
-    .header-top-wrap {
-        position: fixed;
-        top: 0;
-        z-index: 9999;
-        width: 100%;
-    }
-
-    .eleme-header-wrap {
-        position: relative;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: justify;
-        -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        width: 100%;
-        height: 1.173333rem;
-        color: #fff;
-        font-size: .48rem;
-    }
-
-    .eleme-header-left {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        width: 1.173333rem;
-        height: 1.173333rem;
-    }
-
-    .eleme-header-left svg {
-        display: block;
-        width: .586667rem;
-        height: .586667rem;
-    }
-
-    .eleme-header-center {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        height: 1.173333rem;
-        max-width: 50%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        font-weight: 700;
-        font-size: 1em;
-        line-height: 1.173333rem;
-        -webkit-transform: translateX(-50%);
-        transform: translateX(-50%);
-    }
-
-    <!--
-    food.css-- >
-    .index-loadmore {
-        text-align: center;
-        line-height: 3;
-        color: #999
-    }
-
-    .shoplist {
-        background-color: #fff
-    }
-
-    .nodatatip {
-        margin-top: 2.666667rem
-    }
-
-    a {
-        text-decoration: none
-    }
-
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none
-    }
-
-    .filter {
-        position: relative;
-        border-top: 1px solid #ddd;
-        border-bottom: 1px solid #ddd;
-        height: 1.066667rem;
-        line-height: 1.04rem;
-        z-index: 100
-    }
-
-    .filter-header {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        z-index: 3;
-        background-color: #fff
-    }
-
-    .filter-nav {
-        -webkit-box-flex: 1;
-        -webkit-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
-        display: block;
-        width: 0;
-        text-align: center;
-        color: #666;
-        position: relative;
-        font-size: .346667rem
-    }
-
-    .filter-nav:after {
-        content: "";
-        background: #ddd;
-        width: 1px;
-        height: .56rem;
-        position: absolute;
-        top: 50%;
-        right: 0;
-        -webkit-transform: translateY(-50%);
-        transform: translateY(-50%)
-    }
-
-    .filter-nav.active {
-        color: #3190e8
-    }
-
-    .filter-nav.active > svg {
-        fill: currentColor;
-        -webkit-transform: rotate(180deg);
-        transform: rotate(180deg)
-    }
-
-    .filter-nav > svg {
-        width: .24rem;
-        height: .106667rem;
-        margin-bottom: .053333rem;
-        fill: #999;
-        will-change: transform;
-        -webkit-transition: all .3s;
-        transition: all .3s
-    }
-
-    .filter-nav-more.active svg {
-        fill: #3190e8;
-        -webkit-transform: rotate(180deg);
-        transform: rotate(180deg)
-    }
-
-    .filter-nav-arrow {
-        display: inline-block;
-        vertical-align: middle;
-        width: .24rem
-    }
-
-    .filter-extend {
-        left: 0;
-        right: 0;
-        top: 100%;
-        border-top: 1px solid #ddd;
-        position: absolute;
-        max-height: 0;
-        background-color: #fff;
-        -webkit-transition: all .2s ease-in-out;
-        transition: all .2s ease-in-out;
-        visibility: hidden;
-        overflow: auto;
-        opacity: 0;
-        z-index: 3
-    }
-
-    .filter-extend.filter-more {
-        padding-bottom: 1.466667rem
-    }
-
-    .filter-extend.open {
-        opacity: 1;
-        visibility: visible;
-        max-height: 1000%
-    }
-
-    .filter-category {
-        height: 1000%
-    }
-
-    .filter-modal {
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        z-index: 1;
-        background: rgba(0, 0, 0, .2);
-        visibility: hidden;
-        opacity: 0;
-        -webkit-transition: all .3s ease-in-out;
-        transition: all .3s ease-in-out
-    }
-
-    .filter-modal.open {
-        opacity: 1;
-        visibility: visible
-    }
-
-    .filter-category {
-        z-index: 200;
-        padding-bottom: 0;
-        color: #666
-    }
-
-    .filter-category .loading {
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        color: #999
-    }
-
-    .filter-category .filter-scroller,
-    .filter-category .loading {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        height: 100%
-    }
-
-    .filter-category ul {
-        -webkit-box-flex: 1;
-        -webkit-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
-        display: block;
-        width: 0;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        overflow: auto;
-        -webkit-overflow-scrolling: touch
-    }
-
-    .filter-category ul:first-child {
-        background-color: #f2f2f2
-    }
-
-    .filter-category ul:first-child li {
-        padding: 0 .133333rem 0 .266667rem
-    }
-
-    .filter-category ul:first-child .icon {
-        margin-right: .133333rem;
-        width: .453333rem;
-        vertical-align: middle
-    }
-
-    .filter-category ul:nth-of-type(2) {
-        margin-left: .4rem;
-        padding-right: .133333rem
-    }
-
-    .filter-category ul:nth-of-type(2) li {
-        border-bottom: 1px solid #ddd
-    }
-
-    .filter-category ul:nth-of-type(2) li.active,
-    .filter-category ul:nth-of-type(2) li.active .count {
-        color: #3190e8
-    }
-
-    .filter-category ul:nth-of-type(2) .count {
-        right: .266667rem;
-        background-color: transparent;
-        color: #999
-    }
-
-    .filter-category li {
-        position: relative;
-        line-height: 1.333333rem
-    }
-
-    .filter-category li.active {
-        background-color: #fff
-    }
-
-    .filter-category .count {
-        position: absolute;
-        right: .666667rem;
-        line-height: .373333rem;
-        top: 50%;
-        margin-top: -.186667rem;
-        border-radius: .266667rem;
-        color: #fff;
-        background-color: #ccc;
-        padding: 0 .133333rem;
-        font-size: .293333rem
-    }
-
-    .filter-category .arrow {
-        position: absolute;
-        font-weight: 700;
-        right: .266667rem;
-        top: 50%;
-        width: .24rem;
-        height: .24rem;
-        -webkit-transform: translateY(-50%);
-        transform: translateY(-50%);
-        color: #999
-    }
-
-    .loading {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        height: 10em;
-        color: #999
-    }
-
-    .filter-scroller {
-        overflow: auto;
-        height: 100%;
-        -webkit-overflow-scrolling: touch;
-        line-height: normal
-    }
-
-    .filter-scroller dl {
-        margin: .266667rem 0;
-        padding: 0 .4rem;
-        overflow: hidden
-    }
-
-    .filter-scroller dt {
-        margin-bottom: .2rem
-    }
-
-    .filter-scroller dd {
-        margin: 0;
-        float: left;
-        width: 32%;
-        margin-right: 2%;
-        border: 1px solid #ddd;
-        padding: .173333rem 0;
-        height: .933333rem;
-        margin-bottom: .2rem;
-        border-radius: .066667rem;
-        box-sizing: border-box
-    }
-
-    .filter-scroller dd:nth-of-type(3n) {
-        margin-right: 0
-    }
-
-    .filter-scroller dd.selected {
-        border-color: #a2d2ff;
-        color: #3190e8;
-        background-color: #edf5ff
-    }
-
-    .filter-scroller dd.selected .fengniao,
-    .filter-scroller dd.selected i {
-        display: none
-    }
-
-    .filter-scroller dd.selected .selected-icon {
-        display: inline-block
-    }
-
-    .filter-scroller .fengniao,
-    .filter-scroller .selected-icon {
-        display: none;
-        margin: 0 .066667rem 0 .2rem;
-        width: .506667rem;
-        height: .506667rem;
-        vertical-align: middle
-    }
-
-    .filter-scroller .fengniao {
-        display: inline-block
-    }
-
-    .filter-scroller i {
-        display: inline-block;
-        vertical-align: middle;
-        font-style: normal;
-        border-width: 1px;
-        margin: 0 .066667rem 0 .2rem;
-        border-style: solid;
-        width: .506667rem;
-        line-height: .48rem;
-        text-align: center;
-        border-radius: .08rem;
-        font-size: .32rem;
-        box-sizing: border-box
-    }
-
-    .filter-scroller span {
-        vertical-align: middle
-    }
-
-    .filter-btn {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        border-top: 1px solid #eee;
-        background-color: #fafafa;
-        padding: 0 .133333rem;
-        height: 1.466667rem;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center
-    }
-
-    .filter-btn a {
-        font-size: .48rem;
-        line-height: 1.093333rem;
-        border-radius: .08rem;
-        text-align: center;
-        text-decoration: none;
-        -webkit-box-flex: 1;
-        -webkit-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
-        display: block;
-        width: 0
-    }
-
-    .filter-btn a:first-child {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        margin-right: .266667rem;
-        color: #333
-    }
-
-    .filter-btn a:last-child {
-        color: #fff;
-        background-color: #56d176;
-        border: 1px solid #56d176
-    }
-
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0
-    }
-
-    .filter-sort {
-        padding-bottom: 0
-    }
-
-    .filter-sort li {
-        position: relative;
-        padding-left: .4rem;
-        line-height: 1.333333rem
-    }
-
-    .filter-sort svg {
-        width: .4rem;
-        height: .4rem;
-        margin-right: .266667rem;
-        vertical-align: middle
-    }
-
-    .filter-sort li:not(:last-child):after {
-        position: absolute;
-        content: "";
-        bottom: 0;
-        left: 1.066667rem;
-        right: 0;
-        height: 1px;
-        background-color: #ddd
-    }
-
-    .filter-sort li:active {
-        background-color: #f9f9f9
-    }
-
-    .filter-sort li.active {
-        color: #0089dc
-    }
-
-    .filter-sort li.active .selected {
-        display: block
-    }
-
-    .filter-sort .selected {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        display: none;
-        -webkit-transform: translateY(-50%);
-        transform: translateY(-50%)
-    }
 </style>
 <script>
-    import {mapActions} from 'vuex';
-    import isJSON from 'is-json';
-    import decodeImgUrl from '../../utils/decodeImgUrl.js';
-    export default{
-        data(){
-            return {
-                title: '',
-                menu: [],
-                sub_menu: [],
-                active_index: 0,
-                show_menu: false,
-                show_sort: false,
-                sort_name:'',
-                show_filter:false,
-                is_show_all_category: false,
-                show_name: '',
-                flavor_ids: [],
-                delivery_modes:[],
-                activity_attributes:[]
-            };
-        },
-        methods: Object.assign(mapActions(['getUrlSchema', 'getCategory','getDeliveryModes','getActivityAttributes','clearAndUpdateMerchantFormData','getRestList','updateMerchantFormData']), {
-            back(){
-                this.$router.go(-1);
-            },
-            toggleMenu(){
-                this.close();
-                this.show_menu = !this.show_menu;
-                if (!this.menu.length) {
-                    if (this.is_show_all_category) {
-                        this.getCategory().then(msg => {
-                            this.menu = msg;
-                            for (let i = 0, l = msg.length; i < l; i++) {
-                                if (msg[i].sub_categories) {
-                                    this.sub_menu.push(msg[i].sub_categories);
-                                }
-                            }
-                            this.active_index = msg[0].ids.indexOf(this.id);
-                            //console.log(this.sub_menu);
-                        });
-                    } else {
-                        this.getUrlSchema({
-                            show_name:this.show_name,
-                            flavor_ids:this.flavor_ids
-                        }).then(msg => {
-                            this.menu = msg;
-                            for (let i = 0, l = msg.length; i < l; i++) {
-                                if (msg[i].sub_categories) {
-                                    this.sub_menu.push(msg[i].sub_categories);
-                                }
-                            }
-                            console.log(this.sub_menu);
-                        });
-                    }
-
-                }
-            },
-            decodeImgUrl: decodeImgUrl,
-            close(index){
-                const tab_index = ['show_menu','show_sort','show_filter'];
-                tab_index.forEach((el,key) => {
-                    if(index>-1){
-                        if(key != index) this[el] = false;
-                    }else{
-                        this[el] = false;
-                    }
-
-                });
-            },
-            toggleSort(){
-                this.close();
-                this.show_sort = !this.show_sort;
-            },
-            toggleFilter(){
-                this.close();
-                this.show_filter = !this.show_filter;
-                if(!this.delivery_modes.length || !this.activity_attributes.length){
-                    this.getDeliveryModes().then(msg => this.delivery_modes = msg);
-                    this.getActivityAttributes().then(msg => this.activity_attributes = msg);
-                }
-            },
-            goToTop(){
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            },
-            search(item){
-                this.clearAndUpdateMerchantFormData({
-                    offset:0,
-                    extras:['activities'],
-                    restaurant_category_ids:[item.id]
-                });
-                this.getRestList();
-                this.close();
-                this.goToTop();
-                this.show_name = item.name;
-            },
-            orderBy(order,sort_name){
-                this.updateMerchantFormData({
-                    offset:0,
-                    order_by:order
-                });
-                this.getRestList();
-                this.close();
-                this.goToTop();
-                this.sort_name = sort_name;
-            }
-        }),
-        mounted(){
-            let query = this.$route.query;
-            Object.keys(query).map(el => {
-                if (isJSON(query[el])) {
-                    query[el] = JSON.parse(query[el]);
-                }
-            })
-            const filter_key = query.filter_key;
-            const category_schema = query.filter_key.category_schema;
-            this.show_name = category_schema.category_name;
-            this.flavor_ids = category_schema.complex_category_ids;
-            this.is_show_all_category = category_schema.is_show_all_category;
-            this.id = filter_key.restaurant_category_id.id;
-        }
-    }
+    export default{}
 </script>
