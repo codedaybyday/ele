@@ -1,21 +1,43 @@
 <template>
     <div>
-        <FoodHeader/>
+        <svgs/>
+        <IndexHeader/>
+        <FoodEntryList/>
+        <h3 class="recommand-merchant-title">推荐商家</h3>
         <MerchantList/>
+        <FooterNav/>
     </div>
 </template>
-<style></style>
+<style>
+    .recommand-merchant-title{
+        margin-top: 0.266667rem;
+        line-height: 0.906667rem;
+        font-weight: 600;
+        background-color: #fff;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        font-size: 0.4rem;
+        padding-left: 0.4rem;
+    }
+</style>
 <script>
+    import FooterNav from './common/footerNav.vue';
+    import IndexHeader from './index/indexHeader.vue';
     import MerchantList from './common/merchantList.vue';
-    import FoodHeader from './food/foodHeader.vue';
-    import svgs from './food/svgs.vue';
-    import {mapActions,mapState} from 'vuex';
-    import isJSON from 'is-json';
+    import FoodEntryList from './index/foodEntryList.vue';
+    import svgs from './index/svgs.vue';
+    import {mapActions,mapState,mapMutations} from 'vuex';
     export default{
-        components: {
-            svgs,
+        data(){
+            return {
+            };
+        },
+        components:{
+            FooterNav,
+            IndexHeader,
             MerchantList,
-            FoodHeader
+            FoodEntryList,
+            svgs
         },
         computed:mapState({
             form: state => state.merchant_form_data,
@@ -29,19 +51,10 @@
 
         }),
         mounted(){
-            let query = this.$route.query;
-            Object.keys(query).map(el => {
-                if(isJSON(query[el])){
-                    query[el] = JSON.parse(query[el]);
-                }
-            });
-            const filter_key = query.filter_key;
             this.clearAndUpdateMerchantFormData({
-                offset:0,
-                extras:['activities'],
-                restaurant_category_ids:[filter_key.restaurant_category_id.id]
+                terminal:'h5',
+                extras:['activities']
             });
-
             this.getRestList();
             window.onscroll = () => {
                 let docEle = document.documentElement;

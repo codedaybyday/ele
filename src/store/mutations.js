@@ -24,9 +24,21 @@ export default{
 		//console.log(state.merchant_form_data);
 	},
 	[mutation_types.SET_RESTAURANTS](state,msg){
-		state.restaurants = msg;
+		if(msg.length){
+			if(msg.length < state.merchant_form_data.limit){
+                state.merchant_form_data.is_end = true;
+			}
+            state.restaurants = msg;
+		}else{
+			state.merchant_form_data.is_end = true;
+		}
 	},
 	[mutation_types.APPEND_RESTAURANTS](state,msg){
-		state.restaurants.push(...msg);
+		if(msg.length){
+            state.restaurants.push(...msg);
+		}else{
+			state.merchant_form_data.is_end = true;
+		}
+
 	}
 }

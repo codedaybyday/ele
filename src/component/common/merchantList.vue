@@ -39,7 +39,7 @@
 				</div>
 			</router-link>
 		</ul>
-		<p class="load-more"><span>正在载入更多商家</span></p>
+		<p :class="load_style"><span>{{is_end?'没有更多了':'正在载入更多商家'}}</span></p>
 	</div>
 </template>
 <style>
@@ -240,62 +240,35 @@
 		color: #999;
 		margin-bottom:1.333333rem;
 	}
+	.load-more2{
+		text-align: center;
+		line-height: 3;
+		color: #999;
+		margin-bottom: 0;
+	}
 </style>
 <script>
     import {mapActions,mapState} from 'vuex';
-    import isJSON from 'is-json';
     import decodeImgUrl from '../../utils/decodeImgUrl.js';
     export default{
         data(){
             return {
+                load_style:{}
             };
         },
         computed:mapState({
-            form: state => state.merchant_form_data,
-            restaurants:state => state.restaurants
+            restaurants:state => state.restaurants,
+			is_end:state => state.merchant_form_data.is_end
         }),
-        methods:Object.assign(mapActions(['getRestList','updateMerchantFormData','clearAndUpdateMerchantFormData']),{
+		methods:{
             decodeImgUrl:decodeImgUrl
-        }),
-        mounted(){
-            switch(this.$route.path){
-                case '/':
-                case '/takeout':
-                    this.updateMerchantFormData({
-                        terminal:'h5',
-                        extras:['activities']
-                    });
-                    break;
-                case '/food':
-                    let query = this.$route.query;
-                    Object.keys(query).map(el => {
-                        if(isJSON(query[el])){
-                            query[el] = JSON.parse(query[el]);
-                        }
-                    });
-                    const filter_key = query.filter_key;
-                    this.clearAndUpdateMerchantFormData({
-                        offset:0,
-                        extras:['activities'],
-                        restaurant_category_ids:[filter_key.restaurant_category_id.id]
-                    });
-                    break;
-            }
-
-            this.getRestList();
-            window.onscroll = () => {
-                let docEle = document.documentElement;
-                let body = document.getElementsByTagName('body')[0];
-                if( docEle.offsetHeight-body.scrollTop<=docEle.clientHeight ){
-                    if(this.is_loading) return false;
-                    this.is_loading = true;
-                    this.updateMerchantFormData({
-                        offset:this.form.offset+this.form.limit
-                    });
-                    this.getRestList(1);
-                    this.is_loading = false;
-                }
-            };
-        }
+		},
+		mounted(){
+            const flag = ['/','/index'].includes(this.$route.path);
+            this.load_style = {
+				'load-more2':!flag,
+				'load-more':flag
+			};
+		}
     };
 </script>

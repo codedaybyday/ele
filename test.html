@@ -1,57 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>test</title>
-</head>
-<body>
-	
-</body>
-<script>
-function fetch(type = 'GET',url,data){
-	return new Promise((resolve,reject) => {
-		let xhr = new XMLHttpRequest(),
-			data_str = '';
-
-		xhr.responseType = 'json';
-		//xhr.setRequestHeader('Acept','application/json');
-		xhr.onreadystatechange = function(){
-			if(this.readyState !== 4) return;
-			if(this.status == 200){
-				console.log( resolve(this.response) );
-			}else{
-				reject(new Error(this.statusText));
-			}
-		};
-		if(type === 'GET'){
-			for(let key in data){
-				data_str += key+'='+data[key]+'&';
-			}
-			data_str = data_str.substr(0,data_str.length-1);
-			url += '?'+data_str;
-			xhr.open(type,url,true);
-			xhr.send(null);
-		}else if(type === 'POST'){
-			xhr.open(type,url,true);
-			xhr.send(data);
-		}
-	});
-};
-/*var p = fetch('GET','data.json',{});
-console.log(p.then(function(val){
-	console.log(val)
-}));*/
-function timeout(ms) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-}
-
-async function asyncPrint(value, ms) {
-  await timeout(ms).then(() => console.log('timeout'));
-  console.log(value)
-}
-
-asyncPrint('hello world', 50);
-</script>
-</html>
+<header class="takeout-header">
+    <div class="header-top">
+        <div class="header-address">
+            <svg class="address-icon">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#location"></use>
+            </svg>
+            <span class="header-address-content">黄浦区人民大道上海市政府上海市委</span>
+            <svg class="address-select-icon">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow"></use>
+            </svg>
+        </div>
+        <div class="header-weather">
+            <div><h2 class="temp">20°</h2>
+                <p class="weather-type">阴</p></div>
+            <img alt="" src="/static/img/weather_icon.png?37319e992e612e983f517e2690cb3e16png" class="weather-icon">
+        </div>
+    </div>
+    <form action=""><input type="text" placeholder="搜索商家、商品" class="search-bar"></form>
+    <div class="hot-goods-list"><a href="#/search/#/shop?keyword=大卡司geohash=wtw3sjq6n6um" class="">大卡司</a><a
+            href="#/search/#/shop?keyword=麻辣香锅geohash=wtw3sjq6n6um" class="">麻辣香锅</a><a
+            href="#/search/#/shop?keyword=红料理geohash=wtw3sjq6n6um" class="">红料理</a><a
+            href="#/search/#/shop?keyword=阿拉丁麻辣烫geohash=wtw3sjq6n6um" class="">阿拉丁麻辣烫</a><a
+            href="#/search/#/shop?keyword=geohash=wtw3sjq6n6um" class="">0元早餐</a><a
+            href="#/search/#/shop?keyword=肯德基geohash=wtw3sjq6n6um" class="">肯德基</a><a
+            href="#/search/#/shop?keyword=炸鸡geohash=wtw3sjq6n6um" class="">炸鸡</a><a
+            href="#/search/#/shop?keyword=沪上阿姨geohash=wtw3sjq6n6um" class="">沪上阿姨</a><a
+            href="#/search/#/shop?keyword=棒约翰geohash=wtw3sjq6n6um" class="">棒约翰</a><a
+            href="#/search/#/shop?keyword=大家乐geohash=wtw3sjq6n6um" class="">大家乐</a></div>
+</header>

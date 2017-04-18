@@ -20,7 +20,7 @@
         </div>
         <form action=""><input type="text" placeholder="搜索商家、商品" class="search-bar"></form>
         <div class="hot-goods-list">
-            <a v-for="item in hot_search_words" :href="'/search/#/shop?keyword='+item.search_word+'geohash=wtw3sjq6n6um'">{{item.word}}</a>
+            <router-link v-for="item in hot_search_words" :to="generateHotGoodsUrl(item)">{{item.word}}</router-link>
         </div>
     </header>
 </template>
@@ -150,9 +150,13 @@
                 food_entry:[]
             };
         },
-        computed:mapState(['latitude','longitude']),
+        computed:mapState(['latitude','longitude','geohash']),
         //methods:mapMutations(['testState']),
-        methods:mapActions(['getCityInfo','getWeatherInfo','getPos','getHotSearchWords','getFoodEntry']),//{...mapActions(['get_city_info'])}这样写报错了？？？
+        methods:Object.assign(mapActions(['getCityInfo','getWeatherInfo','getPos','getHotSearchWords','getFoodEntry']),{
+            generateHotGoodsUrl(item){
+                return '/search?keyword='+item.search_word+'&geohash='+this.geohash;
+            }
+        }),
         mounted(){
             //this.testState();
             console.log(1111);

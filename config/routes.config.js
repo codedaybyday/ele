@@ -1,17 +1,18 @@
 /**
  * Created by liubeijing on 2017/4/8.
  */
-import takeout from '../src/component/takeout.vue';
+import index from '../src/component/index.vue';
 import food from '../src/component/food.vue';
 import shop from '../src/component/shop.vue';
+import search from '../src/component/search.vue';
 export default [
     {
         path:'/',
-        component:takeout
+        component:index
     },
     {
-        path:'/takeout',
-        component:takeout
+        path:'/index',
+        component:index
     },
     {
     	path:'/food',
@@ -20,5 +21,8 @@ export default [
     {
         path:'/shop',
         component:shop
+    },{
+        path:'/search',
+        component:search
     }
 ];
