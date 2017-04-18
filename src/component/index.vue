@@ -30,6 +30,7 @@
     export default{
         data(){
             return {
+                is_loading:false
             };
         },
         components:{
@@ -39,7 +40,35 @@
             FoodEntryList,
             svgs
         },
+        computed:mapState({
+            form: state => state.merchant_form_data,
+            restaurants:state => state.restaurants,
+            offset:state => state.merchant_form_data.offset || 0,
+            limit:state => state.merchant_form_data.limit,
+            is_end:state => state.merchant_form_data.is_end
+        }),
+        methods:Object.assign(mapActions(['getRestList','updateMerchantFormData','clearAndUpdateMerchantFormData']),{
+
+        }),
         mounted(){
+            this.clearAndUpdateMerchantFormData({
+                terminal:'h5',
+                extras:['activities']
+            });
+            this.getRestList();
+            window.onscroll = () => {
+                let docEle = document.documentElement;
+                let body = document.getElementsByTagName('body')[0];
+                if( docEle.offsetHeight-body.scrollTop<=docEle.clientHeight && !this.is_end){
+                    if(this.is_loading) return false;
+                    this.is_loading = true;
+                    this.updateMerchantFormData({
+                        offset:this.offset+this.limit
+                    });
+                    this.getRestList(1);
+                    this.is_loading = false;
+                }
+            };
         }
     }
 </script>

@@ -12,7 +12,7 @@ export default{
      * @param type 0表示重新获取，1表示追加
      */
 	getRestList({commit,state},type=0){
-		let { latitude,longitude,merchant_form_data} = state;
+		let { merchant_form_data} = state;
 		/*longitude:longitude,
 		latitude:latitude,
 		terminal:'h5',
@@ -26,6 +26,7 @@ export default{
 			}else{
                 commit(mutation_types.SET_RESTAURANTS,msg)
 			}
+            commit(mutation_types.UPATE_MERCHANT_FORM_DATA,{is_loading:false});
 		});
 	},
 	getWeatherInfo({commit,state}){
@@ -82,7 +83,20 @@ export default{
 			kw:''
 		});
 	},
-	search({state}){
-		return fetch('GET','/shopping/v1/restaurants/search',state.merchant_form_data);
+	getSearchList({state,commit},type = 0){
+		return fetch('GET','/shopping/v1/restaurants/search',state.merchant_form_data).then(msg => {
+			let data = [];
+			for(let i in msg){
+				data.push(...msg[i].restaurant_with_foods.map(el => {
+					return el.restaurant;
+                }));
+			}
+			if(type){
+                commit(mutation_types.APPEND_RESTAURANTS,data);
+			}else{
+                commit(mutation_types.SET_RESTAURANTS,data);
+			}
+			commit(mutation_types.UPATE_MERCHANT_FORM_DATA,{is_loading:false});
+		});
 	}
 }

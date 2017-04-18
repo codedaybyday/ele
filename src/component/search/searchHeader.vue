@@ -825,7 +825,7 @@
                 activity_attributes: []
             };
         },
-        methods: Object.assign(mapActions(['getUrlSchema', 'getCategory', 'getDeliveryModes', 'getActivityAttributes', 'clearAndUpdateMerchantFormData', 'getRestList', 'updateMerchantFormData','search']), {
+        methods: Object.assign(mapActions(['getUrlSchema', 'getCategory', 'getDeliveryModes', 'getActivityAttributes', 'clearAndUpdateMerchantFormData', 'getRestList', 'updateMerchantFormData','getSearchList']), {
             back(){
                 this.$router.go(-1);
             },
@@ -907,14 +907,6 @@
                 this.close();
                 this.goToTop();
                 this.sort_name = sort_name;
-            },
-            getList(){
-                this.clearAndUpdateMerchantFormData({
-                    keyword:this.show_name,
-                    search_item_type:2,
-                    extras:['activities']
-                });
-
             }
         }),
         mounted(){
@@ -923,15 +915,9 @@
                 if (isJSON(query[el])) {
                     query[el] = JSON.parse(query[el]);
                 }
-            })
+            });
             this.show_name = query.keyword;
             console.log(query);
-            /*const filter_key = query.filter_key;
-            const category_schema = query.filter_key.category_schema;
-            this.show_name = category_schema.category_name;
-            this.form.flavor_ids = category_schema.complex_category_ids;
-            this.is_show_all_category = category_schema.is_show_all_category;
-            this.id = filter_key.restaurant_category_id.id;*/
         }
     }
 </script>

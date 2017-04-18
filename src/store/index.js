@@ -15,7 +15,9 @@ let state = {
 		terminal:'',
 		extras:'',
 		keyword:'',
-        search_item_type:''
+        search_item_type:'',
+		is_end:false,
+		is_loading:false
 	},
     restaurants:[]
 };

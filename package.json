@@ -34,6 +34,7 @@
     "html-webpack-plugin": "^2.28.0",
     "is-json": "^2.0.1",
     "jquery": "^3.1.1",
+    "source-map": "^0.5.6",
     "vue": "^2.1.10",
     "vue-loader": "^11.1.0",
     "vue-router": "^2.3.1",
