@@ -98,5 +98,5 @@ export default{
 			}
 			commit(mutation_types.UPATE_MERCHANT_FORM_DATA,{is_loading:false});
 		});
-	}
+	},
 }

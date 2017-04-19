@@ -16,12 +16,15 @@ export default{
 	},
 	[mutation_types.CLEAR_AND_UPATE_MERCHANT_FORM_DATA](state,msg){
 		Object.keys(state.merchant_form_data).map(el => {
-			if(el !== 'longitude' && el !== 'latitude' && el !== 'limit'){
-				state.merchant_form_data[el] = '';
+			if(!['longitude','latitude','limit'].includes(el)){
+				if(typeof state.merchant_form_data[el] === 'number'){
+                    state.merchant_form_data[el] = 0;
+				}else{
+                    state.merchant_form_data[el] = '';
+				}
 			}
 		});
 		Object.assign(state.merchant_form_data,msg);
-		//console.log(state.merchant_form_data);
 	},
 	[mutation_types.SET_RESTAURANTS](state,msg){
 		if(msg.length){

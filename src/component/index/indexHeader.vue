@@ -18,7 +18,7 @@
                 <img class="weather-icon" alt="" :src="'/static/img/weather_icon.png?'+weather_info.image_hash">
             </div>
         </div>
-        <form action=""><input type="text" placeholder="搜索商家、商品" class="search-bar"></form>
+        <input type="text" placeholder="搜索商家、商品" class="search-bar" v-model="keyword" @keyup.enter="searchByKeyWord()">
         <div class="hot-goods-list">
             <router-link v-for="item in hot_search_words" :to="generateHotGoodsUrl(item)">{{item.word}}</router-link>
         </div>
@@ -147,19 +147,34 @@
                     image_hash:''
                 },
                 hot_search_words:[],
-                food_entry:[]
+                food_entry:[],
+                keyword:'',
             };
         },
         computed:mapState(['latitude','longitude','geohash']),
         //methods:mapMutations(['testState']),
-        methods:Object.assign(mapActions(['getCityInfo','getWeatherInfo','getPos','getHotSearchWords','getFoodEntry']),{
+        methods:Object.assign(mapActions(['getCityInfo','getWeatherInfo','getPos','getHotSearchWords','getFoodEntry','clearAndUpdateMerchantFormData','getSearchList']),{
             generateHotGoodsUrl(item){
                 return '/search?keyword='+item.search_word+'&geohash='+this.geohash;
+            },
+            searchByKeyWord(){
+                if(!this.keyword) return false;
+                /*this.clearAndUpdateMerchantFormData({
+                    keyword:this.keyword,
+                    search_item_type:2,
+                    extras:['activities']
+                });
+                this.getSearchList();*/
+                this.$router.push({
+                    path:'/search',
+                    query:{
+                        geohash:this.geohash,
+                        keyword:this.keyword
+                    }
+                });
             }
         }),
         mounted(){
-            //this.testState();
-            console.log(1111);
             this.getWeatherInfo().then(msg => this.weather_info = msg);
             this.getPos().then(msg => this.position = msg);
             this.getHotSearchWords().then(msg => this.hot_search_words = msg);
