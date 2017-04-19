@@ -26,7 +26,7 @@
             MerchantList
         },
         computed:mapState({
-            form: state => state.merchant_form_data,
+            form:state => state.merchant_form_data,
             restaurants:state => state.restaurants,
             offset:state => state.merchant_form_data.offset || 0,
             limit:state => state.merchant_form_data.limit,

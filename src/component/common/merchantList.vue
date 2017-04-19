@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<ul class="merchant-list">
-			<router-link class="merchant-item" v-for="item in restaurants" to="/shop">
+			<router-link class="merchant-item" v-for="item in restaurants" :to="getShopUrl(item)">
 				<div class="merchant-logo"><img :src="decodeImgUrl(item.image_path)" alt=""/></div>
 				<div class="merchant-item-main">
 					<div class="merchant-line">
@@ -258,10 +258,14 @@
         },
         computed:mapState({
             restaurants:state => state.restaurants,
-			is_end:state => state.merchant_form_data.is_end
+			is_end:state => state.merchant_form_data.is_end,
+			geohash:state => state.geohash
         }),
 		methods:{
-            decodeImgUrl:decodeImgUrl
+            decodeImgUrl:decodeImgUrl,
+			getShopUrl(item){
+                return `/shop?geohash=${this.geohash}&id=${item.id}`;
+			}
 		},
 		mounted(){
             const flag = ['/','/index'].includes(this.$route.path);
