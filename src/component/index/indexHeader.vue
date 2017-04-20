@@ -155,7 +155,7 @@
         //methods:mapMutations(['testState']),
         methods:Object.assign(mapActions(['getCityInfo','getWeatherInfo','getPos','getHotSearchWords','getFoodEntry','clearAndUpdateMerchantFormData','getSearchList']),{
             generateHotGoodsUrl(item){
-                return '/search?keyword='+item.search_word+'&geohash='+this.geohash;
+                return `/search?keyword=${item.search_word}&geohash=${this.geohash}`;
             },
             searchByKeyWord(){
                 if(!this.keyword) return false;
