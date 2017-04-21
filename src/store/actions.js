@@ -33,16 +33,18 @@ export default{
 		let { latitude,longitude} = state;
 		return fetch('GET','/bgs/weather/current',{longitude:longitude,latitude:latitude});
 	},
-	getPos(){
-		return fetch('GET','/v2/pois/wtw3sjq6n6um',{})
+	getPos({state}){
+		const {geohash} = state;
+		return fetch('GET',`/v2/pois/${geohash}`,{})
 	},
 	getHotSearchWords({state}){
 		let { latitude,longitude} = state;
 		return fetch('GET','/shopping/v3/hot_search_words',{longitude:longitude,latitude:latitude});
 	},
-	getFoodEntry(){
+	getFoodEntry({state}){
+		const {geohash} = state;
 		return fetch('GET','/v2/index_entry',{
-			geohash:'wtw3sjq6n6um',
+			geohash:geohash,
 			group_type:1,
 			flags:['F']
 		});
@@ -99,4 +101,12 @@ export default{
 			commit(mutation_types.UPATE_MERCHANT_FORM_DATA,{is_loading:false});
 		});
 	},
+	getShopInfo({state},payload){
+		const {longitude,latitude} = state;
+		const {id,data} = payload;
+		return fetch('GET',`/shopping/restaurant/${id}`,Object.assign(data,{
+		 	longitude:longitude,
+		 	latitude:latitude
+		}));
+	}
 }

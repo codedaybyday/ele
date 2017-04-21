@@ -2,24 +2,24 @@
     <div class="shop-header-container_qVoLT_0">
         <div class="shop-header-background_2cwiR_0"
              style="background-image: url(&quot;//fuss10.elemecdn.com/0/18/545916b4d71717553b5812277917cjpeg.jpeg?imageMogr/format/webp/thumbnail/!40p/blur/50x40/&quot;);"></div>
-        <nav class="shop-header-navBar_ibFIP_0"><a href="javascript:;">
+        <nav class="shop-header-navBar_ibFIP_0"><a href="javascript:;" @click="back()">
             <svg>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left"></use>
             </svg>
         </a></nav>
         <div class="shop-header-main_1B2kH_0"><img class="shop-header-logo_3woDQ_0"
-                                                   src="//fuss10.elemecdn.com/0/18/545916b4d71717553b5812277917cjpeg.jpeg?imageMogr/format/webp/">
-            <div class="shop-header-content_3UjPs_0"><h2 class="shop-header-shopName_2QrHh_0">
-                眉州小吃（北苑华贸店）</h2>
+                                                   :src="decodeImgUrl(shop_info.image_path)">
+            <div class="shop-header-content_3UjPs_0">
+                <h2 class="shop-header-shopName_2QrHh_0">{{shop_info.name}}</h2>
                 <p class="shop-header-delivery_1mcTe_0"><span class="shop-header-deliveryItem_Fari3_0">
-            蜂鸟专送
+            {{shop_info.delivery_mode.text}}
           </span> <span class="shop-header-deliveryItem_Fari3_0">
-            31分钟送达
+            {{shop_info.order_lead_time}}分钟送达
           </span> <span class="shop-header-deliveryItem_Fari3_0">
-            配送费¥4
+            {{shop_info.piecewise_agent_fee.description}}
           </span></p>
                 <div class="shop-header-notice_2DzmG_0"><span>公告：</span> <span>
-            欢迎光临，用餐高峰期请提前下单，谢谢。
+            {{shop_info.promotion_info}}
           </span></div>
             </div>
             <svg class="shop-header-detailIcon_1IXZI_0">
@@ -29,12 +29,12 @@
         <div class="shop-header-activities_3NWG9_0">
             <div class="activity-container_2EaDo_0 activity-containerNoWrap_2zBBg_0 shop-header-activityRow_fbfAg_0">
                 <i class="activity-activityIcon_1iJyG_0"
-                   style="background-color: rgb(112, 188, 70); color: rgb(255, 255, 255); border-color: rgb(112, 188, 70);">
-                    新
-                </i> <span class="activity-description_2q8qg_0"><span>新用户下单立减17.0元(不与其它活动同享)</span></span>
+                   style="color:#fff" :style="{background:shop_info.activities[0].icon-color}">
+                    {{shop_info.activities[0].icon_name}}
+                </i> <span class="activity-description_2q8qg_0"><span>{{shop_info.activities[0].name}}</span></span>
             </div>
             <div class="shop-header-activityCount_tCsbf_0">
-                2个活动
+                {{shop_info.activities.length}}个活动
             </div>
         </div>
     </div>
@@ -177,7 +177,32 @@
     }
 </style>
 <script>
+    import {mapActions} from 'vuex';
+    import decodeImgUrl from '../../utils/decodeImgUrl.js';
     export default{
-
+        data(){
+            return {
+                shop_info:{
+                    delivery_mode:{},
+                    piecewise_agent_fee:{},
+                    activities:[]
+                }
+            };
+        },
+        methods:Object.assign(mapActions(['getShopInfo']),{
+            back(){
+                this.$router.go(-1);
+            },
+            decodeImgUrl:decodeImgUrl
+        }),
+        mounted(){
+            const query = this.$route.query;
+            this.getShopInfo({
+                id:query.id,
+                data: {
+                    extras: ['activities', 'album', 'license', 'identification', 'statistics']
+                }
+            }).then(msg => this.shop_info = msg);
+        }
     }
 </script>
