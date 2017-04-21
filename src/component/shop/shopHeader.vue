@@ -1,18 +1,18 @@
 <template>
     <div class="shop-header-container_qVoLT_0">
         <div class="shop-header-background_2cwiR_0"
-             style="background-image: url(&quot;//fuss10.elemecdn.com/0/18/545916b4d71717553b5812277917cjpeg.jpeg?imageMogr/format/webp/thumbnail/!40p/blur/50x40/&quot;);"></div>
+             :style="{'background-image':`url(${decodeImgUrl(shop_info.image_path,'imageMogr/format/webp/thumbnail/!40p/blur/50x40/')}`}"></div>
         <nav class="shop-header-navBar_ibFIP_0"><a href="javascript:;" @click="back()">
             <svg>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left"></use>
             </svg>
         </a></nav>
         <div class="shop-header-main_1B2kH_0"><img class="shop-header-logo_3woDQ_0"
-                                                   :src="decodeImgUrl(shop_info.image_path)">
+                                                   :src="decodeImgUrl(shop_info.image_path,'imageMogr/format/webp/')">
             <div class="shop-header-content_3UjPs_0">
                 <h2 class="shop-header-shopName_2QrHh_0">{{shop_info.name}}</h2>
                 <p class="shop-header-delivery_1mcTe_0"><span class="shop-header-deliveryItem_Fari3_0">
-            {{shop_info.delivery_mode.text}}
+            {{shop_info.delivery_mode&&shop_info.delivery_mode.text?shop_info.delivery_mode.text:'商家配送'}}
           </span> <span class="shop-header-deliveryItem_Fari3_0">
             {{shop_info.order_lead_time}}分钟送达
           </span> <span class="shop-header-deliveryItem_Fari3_0">
@@ -26,12 +26,12 @@
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-right"></use>
             </svg>
         </div>
-        <div class="shop-header-activities_3NWG9_0">
+        <div class="shop-header-activities_3NWG9_0" v-if="shop_info.activities.length">
             <div class="activity-container_2EaDo_0 activity-containerNoWrap_2zBBg_0 shop-header-activityRow_fbfAg_0">
                 <i class="activity-activityIcon_1iJyG_0"
-                   style="color:#fff" :style="{background:shop_info.activities[0].icon-color}">
+                   style="color:#fff" :style="{background:shop_info.activities[0].icon_color}">
                     {{shop_info.activities[0].icon_name}}
-                </i> <span class="activity-description_2q8qg_0"><span>{{shop_info.activities[0].name}}</span></span>
+                </i> <span class="activity-description_2q8qg_0"><span>{{shop_info.activities[0].description}}</span></span>
             </div>
             <div class="shop-header-activityCount_tCsbf_0">
                 {{shop_info.activities.length}}个活动
@@ -183,9 +183,12 @@
         data(){
             return {
                 shop_info:{
-                    delivery_mode:{},
+                    delivery_mode:{
+                        text:''
+                    },
                     piecewise_agent_fee:{},
-                    activities:[]
+                    activities:[],
+                    image_path:''
                 }
             };
         },
@@ -193,7 +196,7 @@
             back(){
                 this.$router.go(-1);
             },
-            decodeImgUrl:decodeImgUrl
+            decodeImgUrl:decodeImgUrl,
         }),
         mounted(){
             const query = this.$route.query;

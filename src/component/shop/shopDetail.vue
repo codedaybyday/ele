@@ -13,23 +13,9 @@
             <div class="menuview-17K3g">
                 <main class="menuview-i6fQ3">
                     <ul class="menucategory-29kyE menuview-2_lFf" category-index="1">
-                        <li class="menucategory-JnDmc menucategory-2MBNs menucategory-3e27M"><img
-                                src="//fuss10.elemecdn.com/5/da/3872d782f707b4c82ce4607c73d1ajpeg.jpeg"
-                                class="menucategory-375ij"> <span class="menucategory-qwsbd">热销榜</span></li>
-                        <li class="menucategory-3e27M"><span class="menucategory-qwsbd">主打菜</span>
-                        </li>
-                        <li class="menucategory-3e27M"><span class="menucategory-qwsbd">凉菜</span>
-                        </li>
-                        <li class="menucategory-3e27M"><span class="menucategory-qwsbd">热菜</span>
-                        </li>
-                        <li class="menucategory-3e27M"><span class="menucategory-qwsbd">特色小吃</span>
-                        </li>
-                        <li class="menucategory-3e27M"><span class="menucategory-qwsbd">甜品</span>
-                        </li>
-                        <li class="menucategory-3e27M"><span class="menucategory-qwsbd">主食</span>
-                        </li>
-                        <li class="menucategory-3e27M"><span class="menucategory-qwsbd">饮品</span>
-                        </li>
+                        <li v-for="item in menu" class="menucategory-JnDmc menucategory-2MBNs menucategory-3e27M"><img
+                                v-if="item.icon_url" :src="decodeImgUrl(item.icon_url)"
+                                class="menucategory-375ij"> <span class="menucategory-qwsbd">{{item.name}}</span></li>
                     </ul>
                     <section data-v-81584c58="" class="container menuview-JqDMu" category-index="1">
                         <div data-v-81584c58="" class="scroller">
@@ -2294,6 +2280,20 @@
     }
 </style>
 <script>
+    import {mapActions} from 'vuex';
+    import decodeImgUrl from '../../utils/decodeImgUrl.js';
     export default{
+        data(){
+            return {
+                menu:{}
+            };
+        },
+        methods: Object.assign(mapActions(['getShopMenu']),{
+            decodeImgUrl:decodeImgUrl
+        }),
+        mounted(){
+            const query = this.$route.query;
+            this.getShopMenu(query.id).then(msg => this.menu = msg);
+        }
     }
 </script>

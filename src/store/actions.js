@@ -108,5 +108,10 @@ export default{
 		 	longitude:longitude,
 		 	latitude:latitude
 		}));
+	},
+	getShopMenu(store,id){
+		return fetch('GET','/shopping/v2/menu',{
+			restaurant_id:id
+		});
 	}
 }
