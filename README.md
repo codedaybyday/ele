@@ -6,7 +6,6 @@
 * vue+vue-router+vuex+webpack+es6
 
 ###  目前完成的功能：
-
 1. 首页
 2. 商家列表
 3. 搜索
