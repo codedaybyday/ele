@@ -4,7 +4,8 @@
         <MerchantList/>
     </div>
 </template>
-<style></style>
+<style>
+</style>
 <script>
     import MerchantList from './common/merchantList.vue';
     import FoodHeader from './food/foodHeader.vue';

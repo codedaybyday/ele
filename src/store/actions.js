@@ -113,5 +113,15 @@ export default{
 		return fetch('GET','/shopping/v2/menu',{
 			restaurant_id:id
 		});
+	},
+	posModalToggle({commit},obj){
+		commit(mutation_types.POS_MODAL_TOGGLE,obj);
+	},
+	searchPosNearby({state},kw){
+		return fetch('GET','/bgs/poi/search_poi_nearby',{
+			offset:0,
+			limit:20,
+			keyword:kw
+		})
 	}
 }

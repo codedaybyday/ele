@@ -17,5 +17,6 @@ export default {
         is_end:false,
         is_loading:false
     },
-    restaurants:[]
+    restaurants:[],
+    show_pos_modal:false
 };

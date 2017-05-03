@@ -1,6 +1,7 @@
 <template>
-    <div>
+    <div :class="{unscrollable:show_pos_modal}">
         <svgs/>
+        <SelectPos/>
         <IndexHeader/>
         <FoodEntryList/>
         <h3 class="recommand-merchant-title">推荐商家</h3>
@@ -9,6 +10,10 @@
     </div>
 </template>
 <style>
+    .unscrollable {
+        height: 100vh;
+        overflow: hidden
+    }
     .recommand-merchant-title{
         margin-top: 0.266667rem;
         line-height: 0.906667rem;
@@ -25,6 +30,7 @@
     import IndexHeader from './index/indexHeader.vue';
     import MerchantList from './common/merchantList.vue';
     import FoodEntryList from './index/foodEntryList.vue';
+    import SelectPos from './index/selectPos.vue';
     import svgs from './index/svgs.vue';
     import {mapActions,mapState,mapMutations} from 'vuex';
     export default{
@@ -33,6 +39,7 @@
             };
         },
         components:{
+            SelectPos,
             FooterNav,
             IndexHeader,
             MerchantList,
@@ -45,7 +52,8 @@
             offset:state => state.merchant_form_data.offset || 0,
             limit:state => state.merchant_form_data.limit,
             is_end:state => state.merchant_form_data.is_end,
-            is_loading:state => state.merchant_form_data.is_loading
+            is_loading:state => state.merchant_form_data.is_loading,
+            show_pos_modal: state => state.show_pos_modal
         }),
         methods:Object.assign(mapActions(['getRestList','updateMerchantFormData','clearAndUpdateMerchantFormData']),{
 

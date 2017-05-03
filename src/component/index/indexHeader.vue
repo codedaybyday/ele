@@ -2,11 +2,11 @@
     <header class="takeout-header">
         <div class="header-top">
             <div class="header-address">
-                <svg class="address-icon">
+                <svg class="address-icon" @click="posModalToggle({type:0,val:true})">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#location"></use>
                 </svg>
                 <span class="header-address-content">{{position.name}}</span>
-                <svg class="address-select-icon">
+                <svg class="address-select-icon" @click="posModalToggle({type:0,val:true})">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow"></use>
                 </svg>
             </div>
@@ -153,7 +153,7 @@
         },
         computed:mapState(['latitude','longitude','geohash']),
         //methods:mapMutations(['testState']),
-        methods:Object.assign(mapActions(['getCityInfo','getWeatherInfo','getPos','getHotSearchWords','getFoodEntry','clearAndUpdateMerchantFormData','getSearchList']),{
+        methods:Object.assign(mapActions(['getCityInfo','getWeatherInfo','getPos','getHotSearchWords','getFoodEntry','clearAndUpdateMerchantFormData','getSearchList','posModalToggle']),{
             generateHotGoodsUrl(item){
                 return `/search?keyword=${item.search_word}&geohash=${this.geohash}`;
             },

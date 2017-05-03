@@ -43,5 +43,12 @@ export default{
 			state.merchant_form_data.is_end = true;
 		}
 
+	},
+	[mutation_types.POS_MODAL_TOGGLE](state,msg){
+		if(msg.type){
+			state.show_pos_modal = !state.show_pos_modal;
+		}else if(msg.val){
+			state.show_pos_modal = msg.val;
+		}
 	}
 }
