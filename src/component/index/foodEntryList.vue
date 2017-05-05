@@ -19,36 +19,50 @@
 </template>
 <style>
     @import url('../../plugin/swiper/swiper.min.css');
-    .food-entry{
+
+    .food-entry {
         overflow: hidden;
         height: 4.72rem;
         border-bottom: 1px solid #eee;
         background-color: #fff;
         text-align: center;
-    //position: relative;
+    / / position: relative;
     }
-    .food-entry-list-wrap{position:absolute;overflow:hidden;}
-    .food-entry-list{overflow:hidden;float:left;}
-    .food-entry-item{
+
+    .food-entry-list-wrap {
+        position: absolute;
+        overflow: hidden;
+    }
+
+    .food-entry-list {
+        overflow: hidden;
+        float: left;
+    }
+
+    .food-entry-item {
         float: left;
         margin-top: 0.293333rem;
         width: 25%;
     }
-    .food-entry-item img{
+
+    .food-entry-item img {
         width: 1.2rem;
         height: 1.2rem;
     }
-    .food-name{
-        display:block;
+
+    .food-name {
+        display: block;
     }
-    .food-entry-ctrl{
+
+    .food-entry-ctrl {
         position: absolute;
         bottom: 10px;
         left: 50%;
         -webkit-transform: translateX(-50%);
         transform: translateX(-50%);
     }
-    .food-entry-ctrl li{
+
+    .food-entry-ctrl li {
         width: 8px;
         height: 8px;
         display: inline-block;
@@ -57,7 +71,8 @@
         opacity: .2;
         margin: 0 3px;
     }
-    .food-entry-ctrl li.is-active{
+
+    .food-entry-ctrl li.is-active {
         background-color: #000;
         opacity: .6;
     }
@@ -69,39 +84,42 @@
     export default{
         data(){
             return {
-                food_entry:[],
-                offset:0,
-                limit:20,
-                is_loading:false
+                food_entry: [],
+                offset: 0,
+                limit: 20,
+                is_loading: false
             };
         },
-        computed:{
+        computed: {
             food_entry_groups(){
                 let arr = [],
-                    len = parseInt(this.food_entry.length/8);
+                    len = parseInt(this.food_entry.length / 8);
                 const group_len = 8;
-                for(let i=0;i<len;i++){
-                    arr[i] = this.food_entry.slice(i*group_len,(i+1)*group_len);
+                for (let i = 0; i < len; i++) {
+                    arr[i] = this.food_entry.slice(i * group_len, (i + 1) * group_len);
                 }
                 return arr;
             },
 
         },
-        methods:Object.assign(mapActions(['getFoodEntry']),{
+        methods: Object.assign(mapActions(['getFoodEntry']), {
             generateEntryUrl(link){
-                return '/food?'+decodeURIComponent(link.split('?')[1]);
+                return '/food?' + decodeURIComponent(link.split('?')[1]);
+            },
+            refresh(){
+                this.getFoodEntry().then(msg => {
+                    this.food_entry = msg
+                    setTimeout(() => {
+                        new Swiper('.swiper-container', {
+                            pagination: '.swiper-pagination',
+                            paginationClickable: true
+                        });
+                    },0);
+                })
             }
         }),
         mounted(){
-            this.getFoodEntry().then(msg => {
-                this.food_entry = msg
-                setTimeout(() => {
-                    new Swiper('.swiper-container',{
-                        pagination: '.swiper-pagination',
-                        paginationClickable: true
-                    });
-                },0);
-            });
+            this.refresh();
         }
     };
 </script>

@@ -172,12 +172,15 @@
                         keyword:this.keyword
                     }
                 });
+            },
+            refresh(){
+                this.getWeatherInfo().then(msg => this.weather_info = msg);
+                this.getPos().then(msg => this.position = msg);
+                this.getHotSearchWords().then(msg => this.hot_search_words = msg);
             }
         }),
         mounted(){
-            this.getWeatherInfo().then(msg => this.weather_info = msg);
-            this.getPos().then(msg => this.position = msg);
-            this.getHotSearchWords().then(msg => this.hot_search_words = msg);
+            this.refresh();
         }
     };
 </script>

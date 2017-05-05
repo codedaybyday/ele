@@ -56,25 +56,27 @@
             show_pos_modal: state => state.show_pos_modal
         }),
         methods:Object.assign(mapActions(['getRestList','updateMerchantFormData','clearAndUpdateMerchantFormData']),{
-
+            refresh(){
+                this.clearAndUpdateMerchantFormData({
+                    terminal:'h5',
+                    extras:['activities']
+                });
+                this.getRestList();
+                window.onscroll = () => {
+                    let docEle = document.documentElement;
+                    let body = document.getElementsByTagName('body')[0];
+                    if( docEle.offsetHeight-body.scrollTop<=docEle.clientHeight && !this.is_end && !this.is_loading){
+                        this.updateMerchantFormData({
+                            offset:this.offset+this.limit,
+                            is_loading:true
+                        });
+                        this.getRestList(1);
+                    }
+                };
+            }
         }),
         mounted(){
-            this.clearAndUpdateMerchantFormData({
-                terminal:'h5',
-                extras:['activities']
-            });
-            this.getRestList();
-            window.onscroll = () => {
-                let docEle = document.documentElement;
-                let body = document.getElementsByTagName('body')[0];
-                if( docEle.offsetHeight-body.scrollTop<=docEle.clientHeight && !this.is_end && !this.is_loading){
-                    this.updateMerchantFormData({
-                        offset:this.offset+this.limit,
-                        is_loading:true
-                    });
-                    this.getRestList(1);
-                }
-            };
+            this.refresh();
         }
     }
 </script>

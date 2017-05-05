@@ -50,5 +50,12 @@ export default{
 		}else if(msg.val){
 			state.show_pos_modal = msg.val;
 		}
+	},
+	[mutation_types.SELECT_POS](state,pos){
+		state.latitude = pos.latitude;
+		state.longitude = pos.longitude;
+		state.geohash = pos.geohash;
+		state.merchant_form_data.latitude = pos.latitude;
+		state.merchant_form_data.longitude = pos.longitude;
 	}
 }

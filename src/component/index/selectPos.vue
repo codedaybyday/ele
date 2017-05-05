@@ -10,12 +10,12 @@
                        @change.prevent="searchPos()" v-model="keyword"></form>
             <div class="poi-3ndyq_0"></div>
             <section v-if="keyword && posList.length">
-                <div class="AddressCell-BfZ31_0" v-for="pos in posList"><p><span class="AddressCell-3dWFD_0">{{pos.name}}</span><span
+                <div class="AddressCell-BfZ31_0" v-for="pos in posList" @click="updatePos(pos)"><p><span class="AddressCell-3dWFD_0">{{pos.name}}</span><span
                         class="AddressCell-2NFpU_0"></span></p>
                     <p class="AddressCell-2WH1g_0">{{pos.address}}</p>
                 </div>
             </section>
-            <section class="poi-4wa7l_0" v-else>
+            <section class="poi-4wa7l_0" v-if="keyword && !posList.length">
                 <section class="NoDataTip-wrapper_1Gwf0tm"><img
                         src="//github.elemecdn.com/eleme/fe-static/master/media/empty/no-shop.png">
                     <h3>没有搜索结果</h3>
@@ -460,11 +460,20 @@
             };
         },
         computed: mapState(['show_pos_modal']),
-        methods: Object.assign(mapActions(['posModalToggle', 'searchPosNearby']), {
+        methods: Object.assign(mapActions(['posModalToggle', 'searchPosNearby','selectPos']), {
             searchPos(){
                 if(this.keyword) {
                     this.searchPosNearby(this.keyword).then(msg => this.posList = msg);
                 }
+            },
+            updatePos(pos){
+                this.selectPos(pos);
+                this.posModalToggle({type:1});
+                console.log(this.$parent.$children);
+                this.$parent.refresh();
+                this.$parent.$children.forEach(component => {
+                    component.refresh && component.refresh();
+                });
             }
         })
     }

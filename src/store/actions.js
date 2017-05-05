@@ -123,5 +123,8 @@ export default{
 			limit:20,
 			keyword:kw
 		})
+	},
+	selectPos({commit},pos){
+		commit(mutation_types.SELECT_POS,pos);
 	}
 }
