@@ -7,8 +7,7 @@
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left"></use>
             </svg>
         </a></nav>
-        <div class="shop-header-main_1B2kH_0"><img class="shop-header-logo_3woDQ_0"
-                                                   :src="decodeImgUrl(shop_info.image_path,'imageMogr/format/webp/')">
+        <div class="shop-header-main_1B2kH_0"><img class="shop-header-logo_3woDQ_0" :src="decodeImgUrl(shop_info.image_path,'imageMogr/format/webp/')">
             <div class="shop-header-content_3UjPs_0">
                 <h2 class="shop-header-shopName_2QrHh_0">{{shop_info.name}}</h2>
                 <p class="shop-header-delivery_1mcTe_0"><span class="shop-header-deliveryItem_Fari3_0">
@@ -198,6 +197,11 @@
             },
             decodeImgUrl:decodeImgUrl,
         }),
+        computed:{
+            /*is_openning:() => {
+                let now = new Date()
+            }*/
+        },
         mounted(){
             const query = this.$route.query;
             this.getShopInfo({
