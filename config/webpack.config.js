@@ -33,9 +33,16 @@ module.exports = {
 			}
 		]
 	},
-	devServer:{
+	/*devServer:{
 		contentBase:__dirname,
 		port:8080,
 		hot:true
-	}
+	},*/
+	plugins: [
+    	new webpack.optimize.UglifyJsPlugin({
+      		compress: {
+        		warnings: false
+      		}
+    	})
+  	]
 };
