@@ -20,7 +20,8 @@
                     <section data-v-81584c58="" class="container menuview-JqDMu" category-index="1">
                         <div data-v-81584c58="" class="scroller">
                             <dl data-v-81584c58="" class="" v-for="item in menu">
-                                <dt data-v-81584c58="">
+                                <template v-if="item">
+                                    <dt data-v-81584c58="">
                                     <div data-v-81584c58="" class="category-title">
                                         <strong data-v-81584c58="" class="category-name">{{item.name}}</strong>
                                         <span data-v-81584c58="" class="category-description">{{item.description}}</span>
@@ -58,6 +59,8 @@
                                         </div>
                                     </section>
                                 </dd>
+                                </template>
+                                
                             </dl>
                         </div>
                         <div data-v-81584c58=""></div>
@@ -1455,7 +1458,7 @@
     export default{
         data(){
             return {
-                menu:{}
+                menu:[]
             };
         },
         methods: Object.assign(mapActions(['getShopMenu']),{

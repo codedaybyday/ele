@@ -469,7 +469,7 @@
             updatePos(pos){
                 this.selectPos(pos);
                 this.posModalToggle({type:1});
-                console.log(this.$parent.$children);
+                //console.log(this.$parent.$children);
                 this.$parent.refresh();
                 this.$parent.$children.forEach(component => {
                     component.refresh && component.refresh();

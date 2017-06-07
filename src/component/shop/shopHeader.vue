@@ -207,7 +207,7 @@
             this.getShopInfo({
                 id:query.id,
                 data: {
-                    extras: ['activities', 'album', 'license', 'identification', 'statistics']
+                    extras: ['activities', 'albums', 'license', 'identification']
                 }
             }).then(msg => this.shop_info = msg);
         }

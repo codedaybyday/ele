@@ -1005,7 +1005,7 @@
                                     this.sub_menu.push(msg[i].sub_categories);
                                 }
                             }
-                            console.log(this.sub_menu);
+                            //console.log(this.sub_menu);
                         });
                     }
 

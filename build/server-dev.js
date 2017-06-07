@@ -7,6 +7,7 @@ var server = new WebpackDevServer(compiler,{
 	hot:true,
 	contentBase:'./',
 	proxy,
-	hotOnly:true
+	hotOnly:true,
+	port:9090
 });
-server.listen(8080);
+server.listen(9090);

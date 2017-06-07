@@ -8,10 +8,8 @@
     var tid;
     var flexible = lib.flexible || (lib.flexible = {});
 
-    console.log(doc);
-
     if (metaEl) {
-        console.warn('将根据已有的meta标签来设置缩放比例');
+        //console.warn('将根据已有的meta标签来设置缩放比例');
         var match = metaEl.getAttribute('content').match(/initial\-scale=([\d\.]+)/);
         if (match) {
             scale = parseFloat(match[1]);
@@ -72,12 +70,12 @@
     function refreshRem(){
         var width = docEl.getBoundingClientRect().width;
         var height = docEl.getBoundingClientRect().height;
-        console.log(width,dpr);
+        //console.log(width,dpr);
         if (width / dpr > 540) {
             width = 540 * dpr;
         }
         var rem = width / 10;
-        console.log(rem);
+        //console.log(rem);
         if(height && height < width) {
             rem = height /10;
         }

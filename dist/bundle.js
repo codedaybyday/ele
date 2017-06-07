@@ -9006,7 +9006,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                                 this.sub_menu.push(msg[i].sub_categories);
                             }
                         }
-                        console.log(this.sub_menu);
+                        //console.log(this.sub_menu);
                     });
                 }
             }
@@ -10266,7 +10266,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         updatePos(pos) {
             this.selectPos(pos);
             this.posModalToggle({ type: 1 });
-            console.log(this.$parent.$children);
+            //console.log(this.$parent.$children);
             this.$parent.refresh();
             this.$parent.$children.forEach(component => {
                 component.refresh && component.refresh();
@@ -11508,7 +11508,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                                 this.sub_menu.push(msg[i].sub_categories);
                             }
                         }
-                        console.log(this.sub_menu);
+                        //console.log(this.sub_menu);
                     });
                 }
             }
@@ -11579,7 +11579,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         });
         this.show_name = query.keyword;
-        console.log(query);
+        //console.log(query);
     }
 };
 
@@ -13367,13 +13367,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = {
     data() {
         return {
-            menu: {}
+            menu: []
         };
     },
     methods: Object.assign(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['getShopMenu']), {
@@ -13605,7 +13608,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.getShopInfo({
             id: query.id,
             data: {
-                extras: ['activities', 'album', 'license', 'identification', 'statistics']
+                extras: ['activities', 'albums', 'license', 'identification']
             }
         }).then(msg => this.shop_info = msg);
     }
@@ -17338,10 +17341,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
     var tid;
     var flexible = lib.flexible || (lib.flexible = {});
 
-    console.log(doc);
-
     if (metaEl) {
-        console.warn('将根据已有的meta标签来设置缩放比例');
+        //console.warn('将根据已有的meta标签来设置缩放比例');
         var match = metaEl.getAttribute('content').match(/initial\-scale=([\d\.]+)/);
         if (match) {
             scale = parseFloat(match[1]);
@@ -17402,12 +17403,12 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
     function refreshRem() {
         var width = docEl.getBoundingClientRect().width;
         var height = docEl.getBoundingClientRect().height;
-        console.log(width, dpr);
+        //console.log(width,dpr);
         if (width / dpr > 540) {
             width = 540 * dpr;
         }
         var rem = width / 10;
-        console.log(rem);
+        //console.log(rem);
         if (height && height < width) {
             rem = height / 10;
         }
@@ -19267,7 +19268,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       attrs: {
         "data-v-81584c58": ""
       }
-    }, [_c('dt', {
+    }, [(item) ? [_c('dt', {
       attrs: {
         "data-v-81584c58": ""
       }
@@ -19394,7 +19395,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           "xlink:href": "#cart-minus"
         }
       })])])])])])])])
-    })], 2)
+    })] : _vm._e()], 2)
   })), _vm._v(" "), _c('div', {
     attrs: {
       "data-v-81584c58": ""
